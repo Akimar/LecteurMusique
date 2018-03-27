@@ -66,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Windows\MusiqueWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\MusiqueWindow.Designer.cs">
+      <DependentUpon>MusiqueWindow.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Windows\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,6 +87,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Windows\MusiqueWindow.resx">
+      <DependentUpon>MusiqueWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

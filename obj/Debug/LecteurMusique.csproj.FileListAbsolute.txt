@@ -13,3 +13,4 @@ D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\Interop.WMPLib.d
 D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\AxInterop.WMPLib.dll
 D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.csproj.ResolveComReference.cache
 D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.MenuMusique.resources
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.Windows.MusiqueWindow.resources
