@@ -93,9 +93,16 @@ namespace LecteurMusique.Classes
             }
         }
 
-        
+
 
         #endregion
 
+        #region constructors
+
+        public Musique()
+        {
+
+        }
+        #endregion
     }
 }
