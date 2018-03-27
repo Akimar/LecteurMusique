@@ -7,7 +7,6 @@ D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.P
 D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.csproj.GenerateResource.Cache
 D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.exe
 D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.pdb
-D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.Menu.resources
 D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\bin\Debug\Interop.WMPLib.dll
 D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\bin\Debug\AxInterop.WMPLib.dll
 D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\Interop.WMPLib.dll
