@@ -30,20 +30,20 @@
         {
             this.buttonAnnuler = new System.Windows.Forms.Button();
             this.buttonValider = new System.Windows.Forms.Button();
-            this.dateTimePickerNaissance = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxPays = new System.Windows.Forms.ComboBox();
-            this.textBoxVille = new System.Windows.Forms.TextBox();
-            this.textBoxCP = new System.Windows.Forms.TextBox();
-            this.textBoxAdresse = new System.Windows.Forms.TextBox();
-            this.textBoxPrenom = new System.Windows.Forms.TextBox();
-            this.textBoxNom = new System.Windows.Forms.TextBox();
-            this.labelPays = new System.Windows.Forms.Label();
-            this.labelNaissance = new System.Windows.Forms.Label();
-            this.labelVille = new System.Windows.Forms.Label();
-            this.labeCP = new System.Windows.Forms.Label();
-            this.labelAdresse = new System.Windows.Forms.Label();
-            this.label = new System.Windows.Forms.Label();
+            this.textBoxNote = new System.Windows.Forms.TextBox();
+            this.textBoxFormat = new System.Windows.Forms.TextBox();
+            this.textBoxAlbum = new System.Windows.Forms.TextBox();
+            this.textBoxArtiste = new System.Windows.Forms.TextBox();
+            this.textBoxTitre = new System.Windows.Forms.TextBox();
+            this.labelGenre = new System.Windows.Forms.Label();
+            this.labelNote = new System.Windows.Forms.Label();
+            this.labeFormat = new System.Windows.Forms.Label();
+            this.labelAlbum = new System.Windows.Forms.Label();
+            this.labelArtiste = new System.Windows.Forms.Label();
             this.labelTitre = new System.Windows.Forms.Label();
+            this.labelDuree = new System.Windows.Forms.Label();
+            this.textBoxDuree = new System.Windows.Forms.TextBox();
+            this.comboBoxGenre = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // buttonAnnuler
@@ -54,6 +54,7 @@
             this.buttonAnnuler.TabIndex = 31;
             this.buttonAnnuler.Text = "Annuler";
             this.buttonAnnuler.UseVisualStyleBackColor = true;
+            this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
             // 
             // buttonValider
             // 
@@ -63,143 +64,144 @@
             this.buttonValider.TabIndex = 30;
             this.buttonValider.Text = "Valider";
             this.buttonValider.UseVisualStyleBackColor = true;
+            this.buttonValider.Click += new System.EventHandler(this.buttonValider_CLick);
             // 
-            // dateTimePickerNaissance
+            // textBoxNote
             // 
-            this.dateTimePickerNaissance.Location = new System.Drawing.Point(170, 212);
-            this.dateTimePickerNaissance.Name = "dateTimePickerNaissance";
-            this.dateTimePickerNaissance.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerNaissance.TabIndex = 29;
+            this.textBoxNote.Location = new System.Drawing.Point(170, 204);
+            this.textBoxNote.Name = "textBoxNote";
+            this.textBoxNote.Size = new System.Drawing.Size(144, 20);
+            this.textBoxNote.TabIndex = 27;
             // 
-            // comboBoxPays
+            // textBoxFormat
             // 
-            this.comboBoxPays.FormattingEnabled = true;
-            this.comboBoxPays.Location = new System.Drawing.Point(170, 241);
-            this.comboBoxPays.Name = "comboBoxPays";
-            this.comboBoxPays.Size = new System.Drawing.Size(144, 21);
-            this.comboBoxPays.TabIndex = 28;
+            this.textBoxFormat.Location = new System.Drawing.Point(170, 169);
+            this.textBoxFormat.Name = "textBoxFormat";
+            this.textBoxFormat.Size = new System.Drawing.Size(144, 20);
+            this.textBoxFormat.TabIndex = 26;
             // 
-            // textBoxVille
+            // textBoxAlbum
             // 
-            this.textBoxVille.Location = new System.Drawing.Point(170, 177);
-            this.textBoxVille.Name = "textBoxVille";
-            this.textBoxVille.Size = new System.Drawing.Size(144, 20);
-            this.textBoxVille.TabIndex = 27;
+            this.textBoxAlbum.Location = new System.Drawing.Point(170, 104);
+            this.textBoxAlbum.Name = "textBoxAlbum";
+            this.textBoxAlbum.Size = new System.Drawing.Size(144, 20);
+            this.textBoxAlbum.TabIndex = 25;
             // 
-            // textBoxCP
+            // textBoxArtiste
             // 
-            this.textBoxCP.Location = new System.Drawing.Point(170, 142);
-            this.textBoxCP.Name = "textBoxCP";
-            this.textBoxCP.Size = new System.Drawing.Size(144, 20);
-            this.textBoxCP.TabIndex = 26;
+            this.textBoxArtiste.Location = new System.Drawing.Point(170, 73);
+            this.textBoxArtiste.Name = "textBoxArtiste";
+            this.textBoxArtiste.Size = new System.Drawing.Size(144, 20);
+            this.textBoxArtiste.TabIndex = 24;
             // 
-            // textBoxAdresse
+            // textBoxTitre
             // 
-            this.textBoxAdresse.Location = new System.Drawing.Point(170, 104);
-            this.textBoxAdresse.Name = "textBoxAdresse";
-            this.textBoxAdresse.Size = new System.Drawing.Size(144, 20);
-            this.textBoxAdresse.TabIndex = 25;
+            this.textBoxTitre.Location = new System.Drawing.Point(170, 37);
+            this.textBoxTitre.Name = "textBoxTitre";
+            this.textBoxTitre.Size = new System.Drawing.Size(144, 20);
+            this.textBoxTitre.TabIndex = 23;
             // 
-            // textBoxPrenom
+            // labelGenre
             // 
-            this.textBoxPrenom.Location = new System.Drawing.Point(170, 73);
-            this.textBoxPrenom.Name = "textBoxPrenom";
-            this.textBoxPrenom.Size = new System.Drawing.Size(144, 20);
-            this.textBoxPrenom.TabIndex = 24;
+            this.labelGenre.AutoSize = true;
+            this.labelGenre.Location = new System.Drawing.Point(65, 239);
+            this.labelGenre.Name = "labelGenre";
+            this.labelGenre.Size = new System.Drawing.Size(36, 13);
+            this.labelGenre.TabIndex = 21;
+            this.labelGenre.Text = "Genre";
             // 
-            // textBoxNom
+            // labelNote
             // 
-            this.textBoxNom.Location = new System.Drawing.Point(170, 37);
-            this.textBoxNom.Name = "textBoxNom";
-            this.textBoxNom.Size = new System.Drawing.Size(144, 20);
-            this.textBoxNom.TabIndex = 23;
+            this.labelNote.AutoSize = true;
+            this.labelNote.Location = new System.Drawing.Point(65, 204);
+            this.labelNote.Name = "labelNote";
+            this.labelNote.Size = new System.Drawing.Size(30, 13);
+            this.labelNote.TabIndex = 20;
+            this.labelNote.Text = "Note";
             // 
-            // labelPays
+            // labeFormat
             // 
-            this.labelPays.AutoSize = true;
-            this.labelPays.Location = new System.Drawing.Point(71, 244);
-            this.labelPays.Name = "labelPays";
-            this.labelPays.Size = new System.Drawing.Size(30, 13);
-            this.labelPays.TabIndex = 22;
-            this.labelPays.Text = "Pays";
+            this.labeFormat.AutoSize = true;
+            this.labeFormat.Location = new System.Drawing.Point(62, 169);
+            this.labeFormat.Name = "labeFormat";
+            this.labeFormat.Size = new System.Drawing.Size(39, 13);
+            this.labeFormat.TabIndex = 19;
+            this.labeFormat.Text = "Format";
             // 
-            // labelNaissance
+            // labelAlbum
             // 
-            this.labelNaissance.AutoSize = true;
-            this.labelNaissance.Location = new System.Drawing.Point(68, 212);
-            this.labelNaissance.Name = "labelNaissance";
-            this.labelNaissance.Size = new System.Drawing.Size(96, 13);
-            this.labelNaissance.TabIndex = 21;
-            this.labelNaissance.Text = "Date de naissance";
+            this.labelAlbum.AutoSize = true;
+            this.labelAlbum.Location = new System.Drawing.Point(65, 104);
+            this.labelAlbum.Name = "labelAlbum";
+            this.labelAlbum.Size = new System.Drawing.Size(36, 13);
+            this.labelAlbum.TabIndex = 18;
+            this.labelAlbum.Text = "Album";
             // 
-            // labelVille
+            // labelArtiste
             // 
-            this.labelVille.AutoSize = true;
-            this.labelVille.Location = new System.Drawing.Point(71, 177);
-            this.labelVille.Name = "labelVille";
-            this.labelVille.Size = new System.Drawing.Size(26, 13);
-            this.labelVille.TabIndex = 20;
-            this.labelVille.Text = "Ville";
-            // 
-            // labeCP
-            // 
-            this.labeCP.AutoSize = true;
-            this.labeCP.Location = new System.Drawing.Point(68, 142);
-            this.labeCP.Name = "labeCP";
-            this.labeCP.Size = new System.Drawing.Size(64, 13);
-            this.labeCP.TabIndex = 19;
-            this.labeCP.Text = "Code Postal";
-            // 
-            // labelAdresse
-            // 
-            this.labelAdresse.AutoSize = true;
-            this.labelAdresse.Location = new System.Drawing.Point(65, 104);
-            this.labelAdresse.Name = "labelAdresse";
-            this.labelAdresse.Size = new System.Drawing.Size(45, 13);
-            this.labelAdresse.TabIndex = 18;
-            this.labelAdresse.Text = "Adresse";
-            // 
-            // label
-            // 
-            this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(65, 73);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(43, 13);
-            this.label.TabIndex = 17;
-            this.label.Text = "Prénom";
+            this.labelArtiste.AutoSize = true;
+            this.labelArtiste.Location = new System.Drawing.Point(65, 73);
+            this.labelArtiste.Name = "labelArtiste";
+            this.labelArtiste.Size = new System.Drawing.Size(36, 13);
+            this.labelArtiste.TabIndex = 17;
+            this.labelArtiste.Text = "Artiste";
             // 
             // labelTitre
             // 
             this.labelTitre.AutoSize = true;
-            this.labelTitre.Location = new System.Drawing.Point(65, 37);
+            this.labelTitre.Location = new System.Drawing.Point(65, 40);
             this.labelTitre.Name = "labelTitre";
             this.labelTitre.Size = new System.Drawing.Size(28, 13);
             this.labelTitre.TabIndex = 16;
             this.labelTitre.Text = "Titre";
             // 
+            // labelDuree
+            // 
+            this.labelDuree.AutoSize = true;
+            this.labelDuree.Location = new System.Drawing.Point(68, 137);
+            this.labelDuree.Name = "labelDuree";
+            this.labelDuree.Size = new System.Drawing.Size(36, 13);
+            this.labelDuree.TabIndex = 33;
+            this.labelDuree.Text = "Durée";
+            // 
+            // textBoxDuree
+            // 
+            this.textBoxDuree.Location = new System.Drawing.Point(170, 137);
+            this.textBoxDuree.Name = "textBoxDuree";
+            this.textBoxDuree.Size = new System.Drawing.Size(144, 20);
+            this.textBoxDuree.TabIndex = 34;
+            // 
+            // comboBoxGenre
+            // 
+            this.comboBoxGenre.FormattingEnabled = true;
+            this.comboBoxGenre.Location = new System.Drawing.Point(170, 239);
+            this.comboBoxGenre.Name = "comboBoxGenre";
+            this.comboBoxGenre.Size = new System.Drawing.Size(144, 21);
+            this.comboBoxGenre.TabIndex = 35;
+            // 
             // MusiqueWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 474);
+            this.ClientSize = new System.Drawing.Size(446, 403);
+            this.Controls.Add(this.comboBoxGenre);
+            this.Controls.Add(this.textBoxDuree);
+            this.Controls.Add(this.labelDuree);
             this.Controls.Add(this.buttonAnnuler);
             this.Controls.Add(this.buttonValider);
-            this.Controls.Add(this.dateTimePickerNaissance);
-            this.Controls.Add(this.comboBoxPays);
-            this.Controls.Add(this.textBoxVille);
-            this.Controls.Add(this.textBoxCP);
-            this.Controls.Add(this.textBoxAdresse);
-            this.Controls.Add(this.textBoxPrenom);
-            this.Controls.Add(this.textBoxNom);
-            this.Controls.Add(this.labelPays);
-            this.Controls.Add(this.labelNaissance);
-            this.Controls.Add(this.labelVille);
-            this.Controls.Add(this.labeCP);
-            this.Controls.Add(this.labelAdresse);
-            this.Controls.Add(this.label);
+            this.Controls.Add(this.textBoxNote);
+            this.Controls.Add(this.textBoxFormat);
+            this.Controls.Add(this.textBoxAlbum);
+            this.Controls.Add(this.textBoxArtiste);
+            this.Controls.Add(this.textBoxTitre);
+            this.Controls.Add(this.labelGenre);
+            this.Controls.Add(this.labelNote);
+            this.Controls.Add(this.labeFormat);
+            this.Controls.Add(this.labelAlbum);
+            this.Controls.Add(this.labelArtiste);
             this.Controls.Add(this.labelTitre);
             this.Name = "MusiqueWindow";
-            this.Text = "MusiqueWindow";
+            this.Text = "Musique";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,19 +211,19 @@
 
         private System.Windows.Forms.Button buttonAnnuler;
         private System.Windows.Forms.Button buttonValider;
-        private System.Windows.Forms.DateTimePicker dateTimePickerNaissance;
-        private System.Windows.Forms.ComboBox comboBoxPays;
-        private System.Windows.Forms.TextBox textBoxVille;
-        private System.Windows.Forms.TextBox textBoxCP;
-        private System.Windows.Forms.TextBox textBoxAdresse;
-        private System.Windows.Forms.TextBox textBoxPrenom;
-        private System.Windows.Forms.TextBox textBoxNom;
-        private System.Windows.Forms.Label labelPays;
-        private System.Windows.Forms.Label labelNaissance;
-        private System.Windows.Forms.Label labelVille;
-        private System.Windows.Forms.Label labeCP;
-        private System.Windows.Forms.Label labelAdresse;
-        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.TextBox textBoxNote;
+        private System.Windows.Forms.TextBox textBoxFormat;
+        private System.Windows.Forms.TextBox textBoxAlbum;
+        private System.Windows.Forms.TextBox textBoxArtiste;
+        private System.Windows.Forms.TextBox textBoxTitre;
+        private System.Windows.Forms.Label labelGenre;
+        private System.Windows.Forms.Label labelNote;
+        private System.Windows.Forms.Label labeFormat;
+        private System.Windows.Forms.Label labelAlbum;
+        private System.Windows.Forms.Label labelArtiste;
         private System.Windows.Forms.Label labelTitre;
+        private System.Windows.Forms.Label labelDuree;
+        private System.Windows.Forms.TextBox textBoxDuree;
+        private System.Windows.Forms.ComboBox comboBoxGenre;
     }
 }

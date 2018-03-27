@@ -32,6 +32,8 @@ namespace LecteurMusique.Classes
                 }
                 return artisteNom;
             }
+
+            set { artisteNom = value; }
         }
 
         private string albumLibelle = null;
@@ -45,12 +47,14 @@ namespace LecteurMusique.Classes
                 }
                 return albumLibelle;
             }
+
+            set { albumLibelle = value; }
         }
 
 
-        private int duree;
+        private int? duree;
 
-        public int Duree
+        public int? Duree
         {
             get { return duree; }
             set { duree = value; }
@@ -64,9 +68,9 @@ namespace LecteurMusique.Classes
             set { format = value; }
         }
 
-        private int note;
+        private int? note;
 
-        public int Note
+        public int? Note
         {
             get { return note; }
             set { note = value; }
@@ -91,6 +95,8 @@ namespace LecteurMusique.Classes
                 }
                 return genreLibelle;
             }
+
+            set { genreLibelle = value; }
         }
 
 

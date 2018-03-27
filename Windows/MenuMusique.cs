@@ -1,4 +1,5 @@
 ﻿using LecteurMusique.BDD;
+using LecteurMusique.Windows;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,6 +45,17 @@ namespace LecteurMusique
                 {
                     item.HeaderText = "Artiste";
                 }
+            }
+        }
+
+        private void buttonAjouter_Click(object sender, EventArgs e)
+        {
+            MusiqueWindow windowToOpen = new MusiqueWindow(null);
+            windowToOpen.ShowDialog();
+            if (windowToOpen.validate == true)
+            {
+               //MusiqueRepository.AddPersonne(windowToOpen.musique);
+               // updateDataGrid();
             }
         }
     }

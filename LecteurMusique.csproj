@@ -51,6 +51,7 @@
     <Compile Include="BDD\ArtisteRepository.cs" />
     <Compile Include="BDD\GenreRepository.cs" />
     <Compile Include="BDD\MusiqueRepository.cs" />
+    <Compile Include="Classes\Genre.cs" />
     <Compile Include="Classes\Musique.cs" />
     <Compile Include="Windows\MainWindow.cs">
       <SubType>Form</SubType>
