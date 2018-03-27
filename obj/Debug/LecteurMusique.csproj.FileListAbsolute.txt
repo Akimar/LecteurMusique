@@ -1,0 +1,16 @@
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\bin\Debug\LecteurMusique.exe.config
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\bin\Debug\LecteurMusique.exe
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\bin\Debug\LecteurMusique.pdb
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.csprojResolveAssemblyReference.cache
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.MainWindow.resources
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.Properties.Resources.resources
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.csproj.GenerateResource.Cache
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.exe
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.pdb
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.Menu.resources
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\bin\Debug\Interop.WMPLib.dll
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\bin\Debug\AxInterop.WMPLib.dll
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\Interop.WMPLib.dll
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\AxInterop.WMPLib.dll
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.csproj.ResolveComReference.cache
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.MenuMusique.resources
