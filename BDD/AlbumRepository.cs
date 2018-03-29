@@ -34,6 +34,29 @@ namespace LecteurMusique.BDD
             }
         }
 
+        public static string getIdFromNom(long nomAlbum)
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
+
+                SqlCommand commande = new SqlCommand();
+                commande.CommandText = @"SELECT Identifiant FROM Album WHERE Nom = @nomAlbum";
+                commande.Connection = connection;
+
+                connection.Open();
+
+                commande.Prepare();
+                commande.Parameters.AddWithValue("@nomAlbum", nomAlbum);
+
+                return commande.ExecuteScalar().ToString();
+            }
+            catch (Exception)
+            {
+                return "";
+            }
+        }
+
 
         public static List<Album> getAlbums()
         {

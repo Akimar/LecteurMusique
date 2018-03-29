@@ -34,8 +34,8 @@ namespace LecteurMusique.Windows
             InitializeComponent();
 
             this.comboBoxGenre.DataSource = GenreRepository.getGenres();
-           //// this.comboBoxArtiste.DataSource = ArtisteRepository.getArtistes();
-            this.comboBoxAlbum.DataSource = AlbumRepository.getAlbums();
+            // this.comboBoxArtiste.DataSource = ArtisteRepository.getArtistes();
+            //this.comboBoxAlbum.DataSource = AlbumRepository.getAlbums();
 
             // va chercher la propriete get Libelle
             this.comboBoxGenre.DisplayMember = "Libelle";
@@ -161,15 +161,25 @@ namespace LecteurMusique.Windows
                 this.comboBoxGenre.BackColor = Color.White;
             }
 
-
+            //champ chemin
+            if (this.textBoxChemin.Text == "")
+            {
+                this.textBoxChemin.BackColor = Color.Red;
+             
+                verifOk = false;
+            }
+            else
+            {
+                this.textBoxChemin.BackColor = Color.White;
+            }
 
             if (verifOk)
             {
 
                 // si tout est ok on va mettre les infos dans notre objet musique
                 this.musique.Titre = this.textBoxTitre.Text;
-                //this.musique.ArtisteNom = this.textBoxArtiste.Text;
-               // this.musique.AlbumLibelle = this.textBoxAlbum.Text;
+                this.musique.ArtisteNom = this.textBoxArtiste.Text;
+                this.musique.AlbumLibelle = this.textBoxAlbum.Text;
                 this.musique.Format = this.textBoxFormat.Text;
                 this.musique.Note = Int32.Parse(this.textBoxNote.Text);
                 this.musique.Genre = ((Genre)this.comboBoxGenre.SelectedItem).Identifiant;
@@ -194,7 +204,7 @@ namespace LecteurMusique.Windows
 
            if(openDialog.ShowDialog() == DialogResult.OK)
             {
-                labelFileDialog.Text = openDialog.FileName;
+                textBoxChemin.Text = openDialog.FileName;
             }
 
         }

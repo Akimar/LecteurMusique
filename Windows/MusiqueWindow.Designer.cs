@@ -44,9 +44,9 @@
             this.comboBoxGenre = new System.Windows.Forms.ComboBox();
             this.labelChemin = new System.Windows.Forms.Label();
             this.buttonChemin = new System.Windows.Forms.Button();
-            this.labelFileDialog = new System.Windows.Forms.Label();
             this.textBoxArtiste = new System.Windows.Forms.TextBox();
             this.textBoxAlbum = new System.Windows.Forms.TextBox();
+            this.textBoxChemin = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonAnnuler
@@ -187,15 +187,6 @@
             this.buttonChemin.UseVisualStyleBackColor = true;
             this.buttonChemin.Click += new System.EventHandler(this.buttonChemin_Click);
             // 
-            // labelFileDialog
-            // 
-            this.labelFileDialog.AutoSize = true;
-            this.labelFileDialog.Location = new System.Drawing.Point(450, 294);
-            this.labelFileDialog.Name = "labelFileDialog";
-            this.labelFileDialog.Size = new System.Drawing.Size(42, 13);
-            this.labelFileDialog.TabIndex = 38;
-            this.labelFileDialog.Text = "Chemin";
-            // 
             // textBoxArtiste
             // 
             this.textBoxArtiste.Location = new System.Drawing.Point(453, 82);
@@ -210,14 +201,21 @@
             this.textBoxAlbum.Size = new System.Drawing.Size(144, 20);
             this.textBoxAlbum.TabIndex = 40;
             // 
+            // textBoxChemin
+            // 
+            this.textBoxChemin.Location = new System.Drawing.Point(453, 305);
+            this.textBoxChemin.Name = "textBoxChemin";
+            this.textBoxChemin.Size = new System.Drawing.Size(144, 20);
+            this.textBoxChemin.TabIndex = 41;
+            // 
             // MusiqueWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 523);
+            this.Controls.Add(this.textBoxChemin);
             this.Controls.Add(this.textBoxAlbum);
             this.Controls.Add(this.textBoxArtiste);
-            this.Controls.Add(this.labelFileDialog);
             this.Controls.Add(this.buttonChemin);
             this.Controls.Add(this.labelChemin);
             this.Controls.Add(this.comboBoxGenre);
@@ -259,8 +257,8 @@
         private System.Windows.Forms.ComboBox comboBoxGenre;
         private System.Windows.Forms.Label labelChemin;
         private System.Windows.Forms.Button buttonChemin;
-        private System.Windows.Forms.Label labelFileDialog;
         private System.Windows.Forms.TextBox textBoxArtiste;
         private System.Windows.Forms.TextBox textBoxAlbum;
+        private System.Windows.Forms.TextBox textBoxChemin;
     }
 }
