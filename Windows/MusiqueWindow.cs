@@ -34,6 +34,7 @@ namespace LecteurMusique.Windows
             InitializeComponent();
 
             this.comboBoxGenre.DataSource = GenreRepository.getGenres();
+            this.comboBoxArtiste.DataSource = ArtisteRepository.getArtistes();
 
             // va chercher la propriete get Libelle
             this.comboBoxGenre.DisplayMember = "Libelle";
