@@ -51,7 +51,7 @@
             // 
             // buttonAnnuler
             // 
-            this.buttonAnnuler.Location = new System.Drawing.Point(597, 429);
+            this.buttonAnnuler.Location = new System.Drawing.Point(429, 374);
             this.buttonAnnuler.Name = "buttonAnnuler";
             this.buttonAnnuler.Size = new System.Drawing.Size(75, 23);
             this.buttonAnnuler.TabIndex = 31;
@@ -61,7 +61,7 @@
             // 
             // buttonValider
             // 
-            this.buttonValider.Location = new System.Drawing.Point(333, 429);
+            this.buttonValider.Location = new System.Drawing.Point(164, 374);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(75, 23);
             this.buttonValider.TabIndex = 30;
@@ -71,21 +71,21 @@
             // 
             // textBoxNote
             // 
-            this.textBoxNote.Location = new System.Drawing.Point(453, 223);
+            this.textBoxNote.Location = new System.Drawing.Point(264, 230);
             this.textBoxNote.Name = "textBoxNote";
             this.textBoxNote.Size = new System.Drawing.Size(144, 20);
             this.textBoxNote.TabIndex = 27;
             // 
             // textBoxFormat
             // 
-            this.textBoxFormat.Location = new System.Drawing.Point(453, 188);
+            this.textBoxFormat.Location = new System.Drawing.Point(264, 188);
             this.textBoxFormat.Name = "textBoxFormat";
             this.textBoxFormat.Size = new System.Drawing.Size(144, 20);
             this.textBoxFormat.TabIndex = 26;
             // 
             // textBoxTitre
             // 
-            this.textBoxTitre.Location = new System.Drawing.Point(453, 44);
+            this.textBoxTitre.Location = new System.Drawing.Point(264, 41);
             this.textBoxTitre.Name = "textBoxTitre";
             this.textBoxTitre.Size = new System.Drawing.Size(144, 20);
             this.textBoxTitre.TabIndex = 23;
@@ -93,7 +93,7 @@
             // labelGenre
             // 
             this.labelGenre.AutoSize = true;
-            this.labelGenre.Location = new System.Drawing.Point(290, 258);
+            this.labelGenre.Location = new System.Drawing.Point(159, 266);
             this.labelGenre.Name = "labelGenre";
             this.labelGenre.Size = new System.Drawing.Size(36, 13);
             this.labelGenre.TabIndex = 21;
@@ -102,7 +102,7 @@
             // labelNote
             // 
             this.labelNote.AutoSize = true;
-            this.labelNote.Location = new System.Drawing.Point(290, 223);
+            this.labelNote.Location = new System.Drawing.Point(159, 230);
             this.labelNote.Name = "labelNote";
             this.labelNote.Size = new System.Drawing.Size(30, 13);
             this.labelNote.TabIndex = 20;
@@ -111,7 +111,7 @@
             // labeFormat
             // 
             this.labeFormat.AutoSize = true;
-            this.labeFormat.Location = new System.Drawing.Point(290, 188);
+            this.labeFormat.Location = new System.Drawing.Point(161, 191);
             this.labeFormat.Name = "labeFormat";
             this.labeFormat.Size = new System.Drawing.Size(39, 13);
             this.labeFormat.TabIndex = 19;
@@ -120,7 +120,7 @@
             // labelAlbum
             // 
             this.labelAlbum.AutoSize = true;
-            this.labelAlbum.Location = new System.Drawing.Point(290, 121);
+            this.labelAlbum.Location = new System.Drawing.Point(161, 121);
             this.labelAlbum.Name = "labelAlbum";
             this.labelAlbum.Size = new System.Drawing.Size(36, 13);
             this.labelAlbum.TabIndex = 18;
@@ -129,7 +129,7 @@
             // labelArtiste
             // 
             this.labelArtiste.AutoSize = true;
-            this.labelArtiste.Location = new System.Drawing.Point(290, 82);
+            this.labelArtiste.Location = new System.Drawing.Point(161, 82);
             this.labelArtiste.Name = "labelArtiste";
             this.labelArtiste.Size = new System.Drawing.Size(36, 13);
             this.labelArtiste.TabIndex = 17;
@@ -138,7 +138,7 @@
             // labelTitre
             // 
             this.labelTitre.AutoSize = true;
-            this.labelTitre.Location = new System.Drawing.Point(290, 47);
+            this.labelTitre.Location = new System.Drawing.Point(161, 44);
             this.labelTitre.Name = "labelTitre";
             this.labelTitre.Size = new System.Drawing.Size(28, 13);
             this.labelTitre.TabIndex = 16;
@@ -147,7 +147,7 @@
             // labelDuree
             // 
             this.labelDuree.AutoSize = true;
-            this.labelDuree.Location = new System.Drawing.Point(290, 153);
+            this.labelDuree.Location = new System.Drawing.Point(161, 153);
             this.labelDuree.Name = "labelDuree";
             this.labelDuree.Size = new System.Drawing.Size(36, 13);
             this.labelDuree.TabIndex = 33;
@@ -155,7 +155,7 @@
             // 
             // textBoxDuree
             // 
-            this.textBoxDuree.Location = new System.Drawing.Point(453, 153);
+            this.textBoxDuree.Location = new System.Drawing.Point(264, 150);
             this.textBoxDuree.Name = "textBoxDuree";
             this.textBoxDuree.Size = new System.Drawing.Size(144, 20);
             this.textBoxDuree.TabIndex = 34;
@@ -163,7 +163,7 @@
             // comboBoxGenre
             // 
             this.comboBoxGenre.FormattingEnabled = true;
-            this.comboBoxGenre.Location = new System.Drawing.Point(453, 258);
+            this.comboBoxGenre.Location = new System.Drawing.Point(264, 263);
             this.comboBoxGenre.Name = "comboBoxGenre";
             this.comboBoxGenre.Size = new System.Drawing.Size(144, 21);
             this.comboBoxGenre.TabIndex = 35;
@@ -171,7 +171,7 @@
             // labelChemin
             // 
             this.labelChemin.AutoSize = true;
-            this.labelChemin.Location = new System.Drawing.Point(290, 294);
+            this.labelChemin.Location = new System.Drawing.Point(161, 297);
             this.labelChemin.Name = "labelChemin";
             this.labelChemin.Size = new System.Drawing.Size(42, 13);
             this.labelChemin.TabIndex = 36;
@@ -179,7 +179,7 @@
             // 
             // buttonChemin
             // 
-            this.buttonChemin.Location = new System.Drawing.Point(551, 335);
+            this.buttonChemin.Location = new System.Drawing.Point(429, 297);
             this.buttonChemin.Name = "buttonChemin";
             this.buttonChemin.Size = new System.Drawing.Size(75, 23);
             this.buttonChemin.TabIndex = 37;
@@ -189,21 +189,21 @@
             // 
             // textBoxArtiste
             // 
-            this.textBoxArtiste.Location = new System.Drawing.Point(453, 82);
+            this.textBoxArtiste.Location = new System.Drawing.Point(264, 82);
             this.textBoxArtiste.Name = "textBoxArtiste";
             this.textBoxArtiste.Size = new System.Drawing.Size(144, 20);
             this.textBoxArtiste.TabIndex = 39;
             // 
             // textBoxAlbum
             // 
-            this.textBoxAlbum.Location = new System.Drawing.Point(453, 121);
+            this.textBoxAlbum.Location = new System.Drawing.Point(264, 118);
             this.textBoxAlbum.Name = "textBoxAlbum";
             this.textBoxAlbum.Size = new System.Drawing.Size(144, 20);
             this.textBoxAlbum.TabIndex = 40;
             // 
             // textBoxChemin
             // 
-            this.textBoxChemin.Location = new System.Drawing.Point(453, 305);
+            this.textBoxChemin.Location = new System.Drawing.Point(264, 297);
             this.textBoxChemin.Name = "textBoxChemin";
             this.textBoxChemin.Size = new System.Drawing.Size(144, 20);
             this.textBoxChemin.TabIndex = 41;
@@ -212,7 +212,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 523);
+            this.ClientSize = new System.Drawing.Size(675, 438);
             this.Controls.Add(this.textBoxChemin);
             this.Controls.Add(this.textBoxAlbum);
             this.Controls.Add(this.textBoxArtiste);
