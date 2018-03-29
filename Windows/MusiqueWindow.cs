@@ -185,9 +185,14 @@ namespace LecteurMusique.Windows
         private void buttonChemin_Click(object sender, EventArgs e)
         {
             OpenFileDialog openDialog = new OpenFileDialog();
-            openDialog.ShowDialog();
+            openDialog.Filter =  "mp3 files (*.mp3)|*.mp3";
+            openDialog.Multiselect = false;
 
-            label1.Text = openDialog.FileName;
+           if( openDialog.ShowDialog() == DialogResult.OK)
+            {
+                labelFileDialog.Text = openDialog.FileName;
+            }
+
         }
     }
 }
