@@ -82,6 +82,7 @@ namespace LecteurMusique.Windows
         private void buttonValider_CLick(object sender, EventArgs e)
         {
             bool verifOk = true;
+            string messageErreur = "";
 
            
             //champ titre
@@ -171,6 +172,23 @@ namespace LecteurMusique.Windows
             else
             {
                 this.textBoxChemin.BackColor = Color.White;
+            }
+
+            if(ArtisteRepository.artisteExist(this.textBoxArtiste.Text) == false && textBoxArtiste.Text != "")
+            {
+                verifOk = false;
+                messageErreur += "\nL'artiste \""+ this.textBoxArtiste.Text+"\" n'existe pas.";
+            }
+
+            if(AlbumRepository.albumExist(this.textBoxAlbum.Text) == false && textBoxAlbum.Text != "")
+            {
+                verifOk = false;
+                messageErreur += "\nL'album \""+ this.textBoxAlbum.Text+"\" n'existe pas.";
+            }
+
+            if(messageErreur != "")
+            {
+                MessageBox.Show(messageErreur);
             }
 
             if (verifOk)

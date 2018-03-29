@@ -34,7 +34,7 @@ namespace LecteurMusique.BDD
             }
         }
 
-        public static string getIdFromNom(long nomAlbum)
+        public static string getIdFromNom(string nomAlbum)
         {
             try
             {

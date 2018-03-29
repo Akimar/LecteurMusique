@@ -92,7 +92,7 @@ namespace LecteurMusique.BDD
             return toReturn;
         }
 
-        public static string getIdFromNom(long nomArtiste)
+        public static string getIdFromNom(string nomArtiste)
         {
             try
             {
