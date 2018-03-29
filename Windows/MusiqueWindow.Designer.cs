@@ -44,11 +44,14 @@
             this.labelDuree = new System.Windows.Forms.Label();
             this.textBoxDuree = new System.Windows.Forms.TextBox();
             this.comboBoxGenre = new System.Windows.Forms.ComboBox();
+            this.labelChemin = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonAnnuler
             // 
-            this.buttonAnnuler.Location = new System.Drawing.Point(290, 306);
+            this.buttonAnnuler.Location = new System.Drawing.Point(293, 335);
             this.buttonAnnuler.Name = "buttonAnnuler";
             this.buttonAnnuler.Size = new System.Drawing.Size(75, 23);
             this.buttonAnnuler.TabIndex = 31;
@@ -58,7 +61,7 @@
             // 
             // buttonValider
             // 
-            this.buttonValider.Location = new System.Drawing.Point(103, 306);
+            this.buttonValider.Location = new System.Drawing.Point(101, 335);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(75, 23);
             this.buttonValider.TabIndex = 30;
@@ -158,7 +161,7 @@
             // labelDuree
             // 
             this.labelDuree.AutoSize = true;
-            this.labelDuree.Location = new System.Drawing.Point(68, 137);
+            this.labelDuree.Location = new System.Drawing.Point(65, 137);
             this.labelDuree.Name = "labelDuree";
             this.labelDuree.Size = new System.Drawing.Size(36, 13);
             this.labelDuree.TabIndex = 33;
@@ -179,11 +182,42 @@
             this.comboBoxGenre.Size = new System.Drawing.Size(144, 21);
             this.comboBoxGenre.TabIndex = 35;
             // 
+            // labelChemin
+            // 
+            this.labelChemin.AutoSize = true;
+            this.labelChemin.Location = new System.Drawing.Point(66, 278);
+            this.labelChemin.Name = "labelChemin";
+            this.labelChemin.Size = new System.Drawing.Size(42, 13);
+            this.labelChemin.TabIndex = 36;
+            this.labelChemin.Text = "Chemin";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(199, 278);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonChemin_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(281, 287);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "label1";
+            // 
             // MusiqueWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(446, 403);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.labelChemin);
             this.Controls.Add(this.comboBoxGenre);
             this.Controls.Add(this.textBoxDuree);
             this.Controls.Add(this.labelDuree);
@@ -225,5 +259,8 @@
         private System.Windows.Forms.Label labelDuree;
         private System.Windows.Forms.TextBox textBoxDuree;
         private System.Windows.Forms.ComboBox comboBoxGenre;
+        private System.Windows.Forms.Label labelChemin;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
     }
 }

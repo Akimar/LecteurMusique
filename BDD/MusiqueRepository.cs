@@ -44,5 +44,48 @@ namespace LecteurMusique.BDD
             return toReturn;
         }
 
+
+        //public static bool AddPersonne(Musique musique)
+        //{
+        //    SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
+
+        //    SqlCommand commande = new SqlCommand();
+        //    commande.CommandText = @"INSERT INTO Musique VALUES(
+        //                             @Titre
+        //                            ,@Duree
+        //                            ,@Format
+        //                            ,@Genre
+        //                            ,@Album
+        //                            ,@CheminFichier
+        //                            ,@Pays)
+        //                           ";
+        //    commande.Connection = connection;
+
+        //    //on spécifie que la requête est une commande préparée
+        //    commande.Prepare();
+
+        //    //on mape les paramètres
+        //    commande.Parameters.AddWithValue("@Prenom", personne.Prenom);
+        //    commande.Parameters.AddWithValue("@Nom", personne.Nom);
+        //    commande.Parameters.AddWithValue("@Adresse", personne.Adresse);
+        //    commande.Parameters.AddWithValue("@CodePostal", personne.Codepostal);
+        //    commande.Parameters.AddWithValue("@Ville", personne.Ville);
+        //    commande.Parameters.AddWithValue("@DateDeNaissance", personne.DateDeNaissance);
+        //    commande.Parameters.AddWithValue("@Pays", personne.Pays);
+        //    //commande.Parameters.AddWithValue("@Identifiant", personne.Identifiant);
+
+        //    connection.Open();
+
+        //    try
+        //    {
+        //        commande.ExecuteNonQuery();
+        //        return true;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return false;
+        //    }
+        //}
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LecteurMusique.Classes;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -31,6 +32,36 @@ namespace LecteurMusique.BDD
             {
                 return "";
             }
+        }
+
+        public static List<Genre> getGenres()
+        {
+            List<Genre> toReturn = new List<Genre>();
+            SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
+
+            SqlCommand commande = new SqlCommand();
+            commande.CommandText = @"SELECT Identifiant
+                                        ,Libelle
+                                         FROM Genre";
+            commande.Connection = connection;
+
+            connection.Open();
+
+            SqlDataReader dataReader = commande.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                Genre toAdd = new Genre();
+
+                toAdd.Identifiant = dataReader.GetInt64(0);
+                toAdd.Libelle = dataReader.GetString(1);
+
+
+                toReturn.Add(toAdd);
+            }
+
+
+            return toReturn;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using LecteurMusique.Classes;
+﻿using LecteurMusique.BDD;
+using LecteurMusique.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,6 +33,10 @@ namespace LecteurMusique.Windows
         {
             InitializeComponent();
 
+            this.comboBoxGenre.DataSource = GenreRepository.getGenres();
+
+            // va chercher la propriete get Libelle
+            this.comboBoxGenre.DisplayMember = "Libelle";
 
             if (_musique != null)
             {
@@ -175,6 +180,14 @@ namespace LecteurMusique.Windows
         private void buttonAnnuler_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonChemin_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openDialog = new OpenFileDialog();
+            openDialog.ShowDialog();
+
+            label1.Text = openDialog.FileName;
         }
     }
 }

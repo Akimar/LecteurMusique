@@ -30,7 +30,7 @@
         {
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonMusique = new System.Windows.Forms.Button();
-            this.buttonPlaylist = new System.Windows.Forms.Button();
+            this.buttonAlbum = new System.Windows.Forms.Button();
             this.buttonArtiste = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -54,14 +54,14 @@
             this.buttonMusique.UseVisualStyleBackColor = true;
             this.buttonMusique.Click += new System.EventHandler(this.buttonMusique_Click);
             // 
-            // buttonPlaylist
+            // buttonAlbum
             // 
-            this.buttonPlaylist.Location = new System.Drawing.Point(206, 373);
-            this.buttonPlaylist.Name = "buttonPlaylist";
-            this.buttonPlaylist.Size = new System.Drawing.Size(149, 23);
-            this.buttonPlaylist.TabIndex = 5;
-            this.buttonPlaylist.Text = "Afficher les playlists";
-            this.buttonPlaylist.UseVisualStyleBackColor = true;
+            this.buttonAlbum.Location = new System.Drawing.Point(206, 373);
+            this.buttonAlbum.Name = "buttonAlbum";
+            this.buttonAlbum.Size = new System.Drawing.Size(149, 23);
+            this.buttonAlbum.TabIndex = 5;
+            this.buttonAlbum.Text = "Accéder aux albums";
+            this.buttonAlbum.UseVisualStyleBackColor = true;
             // 
             // buttonArtiste
             // 
@@ -78,7 +78,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(620, 570);
             this.Controls.Add(this.buttonArtiste);
-            this.Controls.Add(this.buttonPlaylist);
+            this.Controls.Add(this.buttonAlbum);
             this.Controls.Add(this.buttonMusique);
             this.Controls.Add(this.buttonClose);
             this.Name = "MainWindow";
@@ -90,7 +90,7 @@
         #endregion
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Button buttonMusique;
-        private System.Windows.Forms.Button buttonPlaylist;
+        private System.Windows.Forms.Button buttonAlbum;
         private System.Windows.Forms.Button buttonArtiste;
     }
 }
