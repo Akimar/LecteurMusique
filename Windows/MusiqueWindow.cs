@@ -34,10 +34,13 @@ namespace LecteurMusique.Windows
             InitializeComponent();
 
             this.comboBoxGenre.DataSource = GenreRepository.getGenres();
-            this.comboBoxArtiste.DataSource = ArtisteRepository.getArtistes();
+           //// this.comboBoxArtiste.DataSource = ArtisteRepository.getArtistes();
+            this.comboBoxAlbum.DataSource = AlbumRepository.getAlbums();
 
             // va chercher la propriete get Libelle
             this.comboBoxGenre.DisplayMember = "Libelle";
+           // this.comboBoxAlbum.DisplayMember = "Nom";
+            //this.comboBoxArtiste.DisplayMember = "Nom";
 
             if (_musique != null)
             {
@@ -47,7 +50,7 @@ namespace LecteurMusique.Windows
 
             else
             {
-                //si == null on ajoute une nouvelle personne
+                //si == null on ajoute une nouvelle musique
                 musique = new Musique();
             }
 
@@ -80,7 +83,7 @@ namespace LecteurMusique.Windows
         {
             bool verifOk = true;
 
-
+           
             //champ titre
             if (this.textBoxTitre.Text == "")
             {
@@ -165,8 +168,8 @@ namespace LecteurMusique.Windows
 
                 // si tout est ok on va mettre les infos dans notre objet musique
                 this.musique.Titre = this.textBoxTitre.Text;
-                this.musique.ArtisteNom = this.textBoxArtiste.Text;
-                this.musique.AlbumLibelle = this.textBoxAlbum.Text;
+                //this.musique.ArtisteNom = this.textBoxArtiste.Text;
+               // this.musique.AlbumLibelle = this.textBoxAlbum.Text;
                 this.musique.Format = this.textBoxFormat.Text;
                 this.musique.Note = Int32.Parse(this.textBoxNote.Text);
                 this.musique.Genre = ((Genre)this.comboBoxGenre.SelectedItem).Identifiant;
@@ -189,7 +192,7 @@ namespace LecteurMusique.Windows
             openDialog.Filter =  "mp3 files (*.mp3)|*.mp3";
             openDialog.Multiselect = false;
 
-           if( openDialog.ShowDialog() == DialogResult.OK)
+           if(openDialog.ShowDialog() == DialogResult.OK)
             {
                 labelFileDialog.Text = openDialog.FileName;
             }

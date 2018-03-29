@@ -33,20 +33,20 @@ namespace LecteurMusique.BDD
             }
         }
 
-        public static bool Exist(string artistName)
+        public static bool artisteExist(string nomArtiste)
         {
             try
             {
                 SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
 
                 SqlCommand commande = new SqlCommand();
-                commande.CommandText = @"SELECT * FROM Artiste WHERE Nom = @artistName";
+                commande.CommandText = @"SELECT * FROM Artiste WHERE Nom = @nomArtiste";
                 commande.Connection = connection;
 
                 connection.Open();
 
                 commande.Prepare();
-                commande.Parameters.AddWithValue("@artistName", artistName);
+                commande.Parameters.AddWithValue("@nomArtiste", nomArtiste);
 
                 SqlDataReader reader = commande.ExecuteReader();
 
