@@ -119,7 +119,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonClose);
             this.Name = "MenuMusique";
-            this.Text = "Menu Musique";
+            this.Text = "Menu Musiques";
             this.Load += new System.EventHandler(this.MenuMusique_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();

@@ -61,6 +61,12 @@
     <Compile Include="Windows\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\MenuAlbum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\MenuAlbum.Designer.cs">
+      <DependentUpon>MenuAlbum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MenuMusique.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </Compile>
     <EmbeddedResource Include="Windows\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\MenuAlbum.resx">
+      <DependentUpon>MenuAlbum.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\MenuMusique.resx">
       <DependentUpon>MenuMusique.cs</DependentUpon>
