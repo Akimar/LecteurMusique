@@ -175,5 +175,49 @@ namespace LecteurMusique.BDD
                 return false;
             }
         }
+
+
+        public static bool deleteMusique(Musique musique)
+        {
+            SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
+
+            SqlCommand commande = new SqlCommand();
+            commande.CommandText = @"DELETE FROM Compose
+                                     WHERE IdentifiantMusique = @IdentifiantMusique";
+            commande.Connection = connection;
+
+            //On spécifie que la requête est une commande "préparée"
+            commande.Prepare();
+
+            //On mappe les paramètres
+            commande.Parameters.AddWithValue("@IdentifiantMusique", musique.Identifiant);
+
+            connection.Open();
+
+            SqlCommand commande2 = new SqlCommand();
+            commande2.CommandText = @"DELETE FROM Musique
+                                     WHERE Identifiant = @Identifiant";
+            commande2.Connection = connection;
+
+            //On spécifie que la requête est une commande "préparée"
+            commande2.Prepare();
+
+            //On mappe les paramètres
+            commande2.Parameters.AddWithValue("@Identifiant", musique.Identifiant);
+
+            try
+            {
+                commande.ExecuteNonQuery();
+                commande2.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+
+        }
+
     }
 }

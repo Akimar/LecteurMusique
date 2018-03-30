@@ -95,5 +95,32 @@ namespace LecteurMusique
                 MessageBox.Show("Merci de ne séléctionner qu'une et une seule musique.");
             }
         }
+
+        private void buttonSupprimer_Click(object sender, EventArgs e)
+        {
+            if (this.dataGridView1.SelectedRows.Count == 1)
+            {
+                Musique musiqueToDelete = null;
+
+                foreach (DataGridViewRow item in this.dataGridView1.SelectedRows.OfType<DataGridViewRow>())
+                {
+                    if (item.DataBoundItem.GetType() == typeof(Musique))
+                    {
+                        musiqueToDelete = item.DataBoundItem as Musique;
+                        
+                    }
+                }
+
+                if (MessageBox.Show("Êtes-vous sur de vouloir supprimer cetter chanson ?", "Suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    MusiqueRepository.deleteMusique(musiqueToDelete);
+                }
+                updateDataGrid();
+            }
+            else
+            {
+                MessageBox.Show("Merci de sélectionner une chanson !");
+            }
+        }
     }
 }

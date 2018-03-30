@@ -86,6 +86,7 @@
             this.buttonSupprimer.TabIndex = 4;
             this.buttonSupprimer.Text = "Supprimer";
             this.buttonSupprimer.UseVisualStyleBackColor = true;
+            this.buttonSupprimer.Click += new System.EventHandler(this.buttonSupprimer_Click);
             // 
             // buttonLire
             // 
