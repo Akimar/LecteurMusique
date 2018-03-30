@@ -20,6 +20,21 @@ namespace LecteurMusique
             InitializeComponent();
         }
 
+        public void LoadMusic(string filename)
+        {
+            try
+            {
+                if (this.axWindowsMediaPlayer1.playState != WMPLib.WMPPlayState.wmppsStopped)
+                {
+                    this.axWindowsMediaPlayer1.Ctlcontrols.stop();
+                }
+            }
+            catch (Exception) { }
+            this.axWindowsMediaPlayer1.URL = filename;
+            this.axWindowsMediaPlayer1.Refresh();
+            this.axWindowsMediaPlayer1.Ctlcontrols.play();
+        }
+
         private void updateDataGrid()
         {
             this.dataGridView1.DataSource = MusiqueRepository.getMusiques();
@@ -76,7 +91,7 @@ namespace LecteurMusique
                     if (item.DataBoundItem.GetType() == typeof(Musique))
                     {
                         musiqueToUpdate = item.DataBoundItem as Musique;
-                        //personneTopdate =  (Personne)item.DataBoudItem;
+                        
                     }
 
                 }
@@ -121,6 +136,29 @@ namespace LecteurMusique
             {
                 MessageBox.Show("Merci de sélectionner une chanson !");
             }
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (this.dataGridView1.SelectedRows.Count == 1)
+            {
+                Musique musiqueToPlay = null;
+
+                foreach (DataGridViewRow item in this.dataGridView1.SelectedRows.OfType<DataGridViewRow>())
+                {
+                    if (item.DataBoundItem.GetType() == typeof(Musique))
+                    {
+                        musiqueToPlay = item.DataBoundItem as Musique;
+
+                    }
+                }
+
+                if (musiqueToPlay != null)
+                {
+                    LoadMusic(musiqueToPlay.CheminFichier);
+                }
+            }
+
         }
     }
 }
