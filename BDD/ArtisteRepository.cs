@@ -92,7 +92,7 @@ namespace LecteurMusique.BDD
             return toReturn;
         }
 
-        public static string getIdFromNom(string nomArtiste)
+        public static long getIdFromNom(string nomArtiste)
         {
             try
             {
@@ -107,11 +107,11 @@ namespace LecteurMusique.BDD
                 commande.Prepare();
                 commande.Parameters.AddWithValue("@nomArtiste", nomArtiste);
 
-                return commande.ExecuteScalar().ToString();
+                return long.Parse(commande.ExecuteScalar().ToString());
             }
             catch (Exception)
             {
-                return "";
+                return -1;
             }
         }
 

@@ -45,47 +45,135 @@ namespace LecteurMusique.BDD
         }
 
 
-        //public static bool AddPersonne(Musique musique)
-        //{
-        //    SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
+        public static long addMusique(Musique musique)
+        {
+            SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
 
-        //    SqlCommand commande = new SqlCommand();
-        //    commande.CommandText = @"INSERT INTO Musique VALUES(
-        //                             @Titre
-        //                            ,@Duree
-        //                            ,@Format
-        //                            ,@Genre
-        //                            ,@Album
-        //                            ,@CheminFichier
-        //                            ,@Pays)
-        //                           ";
-        //    commande.Connection = connection;
+            SqlCommand commande = new SqlCommand();
+            commande.CommandText = @"INSERT INTO Musique VALUES(
+                                     @Titre
+                                    ,@Duree
+                                    ,@Format
+                                    ,@Genre
+                                    ,@Album
+                                    ,@CheminFichier
+                                    ,@Note);
+                                    SELECT @@IDENTITY;
+                                   ";
+            commande.Connection = connection;
 
-        //    //on spécifie que la requête est une commande préparée
-        //    commande.Prepare();
+            //on spécifie que la requête est une commande préparée
+            commande.Prepare();
 
-        //    //on mape les paramètres
-        //    commande.Parameters.AddWithValue("@Prenom", personne.Prenom);
-        //    commande.Parameters.AddWithValue("@Nom", personne.Nom);
-        //    commande.Parameters.AddWithValue("@Adresse", personne.Adresse);
-        //    commande.Parameters.AddWithValue("@CodePostal", personne.Codepostal);
-        //    commande.Parameters.AddWithValue("@Ville", personne.Ville);
-        //    commande.Parameters.AddWithValue("@DateDeNaissance", personne.DateDeNaissance);
-        //    commande.Parameters.AddWithValue("@Pays", personne.Pays);
-        //    //commande.Parameters.AddWithValue("@Identifiant", personne.Identifiant);
+            //on mape les paramètres
+            commande.Parameters.AddWithValue("@Titre", musique.Titre);
+            commande.Parameters.AddWithValue("@Duree", musique.Duree);
+            commande.Parameters.AddWithValue("@Format", musique.Format);
+            commande.Parameters.AddWithValue("@Genre", musique.Genre);
+            commande.Parameters.AddWithValue("@Album", musique.Album);
+            commande.Parameters.AddWithValue("@CheminFichier", musique.CheminFichier);
+            commande.Parameters.AddWithValue("@Note", musique.Note);
+            
 
-        //    connection.Open();
+            connection.Open();
 
-        //    try
-        //    {
-        //        commande.ExecuteNonQuery();
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return false;
-        //    }
-        //}
+            try
+            {
+                long idMusiqueAdded = long.Parse(commande.ExecuteScalar().ToString());
+                addCompose(musique.Artiste, idMusiqueAdded);
+                return idMusiqueAdded;
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
 
+        public static bool addCompose(long idArtiste, long idMusique)
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
+
+                SqlCommand commande = new SqlCommand();
+
+                commande.CommandText = @"INSERT INTO Compose VALUES(@idArtiste, @idMusique)";
+                commande.Connection = connection;
+
+                connection.Open();
+
+                commande.Prepare();
+                commande.Parameters.AddWithValue("@idArtiste", idArtiste);
+                commande.Parameters.AddWithValue("@idMusique", idMusique);
+                commande.ExecuteNonQuery();
+                return true;
+            }
+           catch(Exception)
+            {
+                return false;
+            }
+        }
+
+        public static bool updateMusique(Musique musique)
+        {
+            long idArtiste = 0;
+            idArtiste = ArtisteRepository.getIdFromNom(musique.ArtisteNom);
+            
+
+            SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
+
+            SqlCommand commande = new SqlCommand();
+            commande.CommandText = @"UPDATE Musique
+                                    SET
+                                    Titre = @Titre
+                                    ,Duree = @Duree
+                                    ,Format = @Format
+                                    ,Genre = @Genre
+                                    ,Album = @Album
+                                    ,CheminFichier = @CheminFichier
+                                    ,Note = @Note
+                                    WHERE Identifiant = @Identifiant";
+            commande.Connection = connection;
+
+            //on spécifie que la requête est une commande préparée
+            commande.Prepare();
+
+            //on mape les paramètres
+            commande.Parameters.AddWithValue("@Titre", musique.Titre);
+            commande.Parameters.AddWithValue("@Duree", musique.Duree);
+            commande.Parameters.AddWithValue("@Format", musique.Format);
+            commande.Parameters.AddWithValue("@Genre", musique.Genre);
+            commande.Parameters.AddWithValue("@Album", musique.Album);
+            commande.Parameters.AddWithValue("@CheminFichier", musique.CheminFichier);
+            commande.Parameters.AddWithValue("@Note", musique.Note);
+            commande.Parameters.AddWithValue("@Identifiant", musique.Identifiant);
+
+            SqlCommand commande2 = new SqlCommand();
+            commande2.CommandText = @"UPDATE Compose
+                                    SET
+                                    IdentifiantArtiste = @Artiste
+                                    WHERE IdentifiantMusique = @IdentifiantMusique";
+            commande2.Connection = connection;
+
+            //on spécifie que la requête est une commande préparée
+            commande2.Prepare();
+
+            //on mape les paramètres
+            commande2.Parameters.AddWithValue("@IdentifiantMusique", musique.Identifiant);
+            commande2.Parameters.AddWithValue("@Artiste", idArtiste);
+
+            connection.Open();
+
+            try
+            {
+                commande.ExecuteNonQuery();
+                commande2.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

@@ -76,6 +76,7 @@
             this.buttonModifier.TabIndex = 3;
             this.buttonModifier.Text = "Modifier";
             this.buttonModifier.UseVisualStyleBackColor = true;
+            this.buttonModifier.Click += new System.EventHandler(this.buttonModifier_Click);
             // 
             // buttonSupprimer
             // 

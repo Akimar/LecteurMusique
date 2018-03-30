@@ -81,7 +81,7 @@ namespace LecteurMusique.Classes
 
         public long Genre;
         public long Album;
-
+        public long Artiste;
        
 
         private string genreLibelle = null;

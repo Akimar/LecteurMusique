@@ -57,6 +57,7 @@ namespace LecteurMusique.Windows
             this.textBoxTitre.Text = musique.Titre;
             this.textBoxArtiste.Text = musique.ArtisteNom;
             this.textBoxAlbum.Text = musique.AlbumLibelle;
+            this.textBoxChemin.Text = musique.CheminFichier;
             if (musique.Duree != null)
             {
                 this.textBoxDuree.Text = musique.Duree.ToString();
@@ -174,13 +175,15 @@ namespace LecteurMusique.Windows
                 this.textBoxChemin.BackColor = Color.White;
             }
 
+            //verifie si l artiste existe
             if(ArtisteRepository.artisteExist(this.textBoxArtiste.Text) == false && textBoxArtiste.Text != "")
             {
                 verifOk = false;
                 messageErreur += "\nL'artiste \""+ this.textBoxArtiste.Text+"\" n'existe pas.";
             }
 
-            if(AlbumRepository.albumExist(this.textBoxAlbum.Text) == false && textBoxAlbum.Text != "")
+            //verifie si l album existe
+            if (AlbumRepository.albumExist(this.textBoxAlbum.Text) == false && textBoxAlbum.Text != "")
             {
                 verifOk = false;
                 messageErreur += "\nL'album \""+ this.textBoxAlbum.Text+"\" n'existe pas.";
@@ -198,9 +201,13 @@ namespace LecteurMusique.Windows
                 this.musique.Titre = this.textBoxTitre.Text;
                 this.musique.ArtisteNom = this.textBoxArtiste.Text;
                 this.musique.AlbumLibelle = this.textBoxAlbum.Text;
+                this.musique.Duree = Int32.Parse(this.textBoxDuree.Text);
                 this.musique.Format = this.textBoxFormat.Text;
                 this.musique.Note = Int32.Parse(this.textBoxNote.Text);
                 this.musique.Genre = ((Genre)this.comboBoxGenre.SelectedItem).Identifiant;
+                this.musique.CheminFichier = this.textBoxChemin.Text;
+                this.musique.Album = AlbumRepository.getIdFromNom(this.textBoxAlbum.Text);
+                this.musique.Artiste = ArtisteRepository.getIdFromNom(this.textBoxArtiste.Text);
 
 
 

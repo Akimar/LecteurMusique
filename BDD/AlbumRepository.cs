@@ -34,7 +34,7 @@ namespace LecteurMusique.BDD
             }
         }
 
-        public static string getIdFromNom(string nomAlbum)
+        public static long getIdFromNom(string nomAlbum)
         {
             try
             {
@@ -49,11 +49,11 @@ namespace LecteurMusique.BDD
                 commande.Prepare();
                 commande.Parameters.AddWithValue("@nomAlbum", nomAlbum);
 
-                return commande.ExecuteScalar().ToString();
+                return long.Parse(commande.ExecuteScalar().ToString());
             }
             catch (Exception)
             {
-                return "";
+                return -1;
             }
         }
 
@@ -94,7 +94,7 @@ namespace LecteurMusique.BDD
                 SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
 
                 SqlCommand commande = new SqlCommand();
-                commande.CommandText = @"SELECT * FROM Artiste WHERE Nom = @nomAlbum";
+                commande.CommandText = @"SELECT * FROM Album WHERE Nom = @nomAlbum";
                 commande.Connection = connection;
 
                 connection.Open();
