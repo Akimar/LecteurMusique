@@ -34,7 +34,6 @@
             this.buttonAjout = new System.Windows.Forms.Button();
             this.buttonModifier = new System.Windows.Forms.Button();
             this.buttonSupprimer = new System.Windows.Forms.Button();
-            this.buttonLire = new System.Windows.Forms.Button();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
@@ -89,15 +88,6 @@
             this.buttonSupprimer.UseVisualStyleBackColor = true;
             this.buttonSupprimer.Click += new System.EventHandler(this.buttonSupprimer_Click);
             // 
-            // buttonLire
-            // 
-            this.buttonLire.Location = new System.Drawing.Point(37, 572);
-            this.buttonLire.Name = "buttonLire";
-            this.buttonLire.Size = new System.Drawing.Size(75, 23);
-            this.buttonLire.TabIndex = 5;
-            this.buttonLire.Text = "Lire";
-            this.buttonLire.UseVisualStyleBackColor = true;
-            // 
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
@@ -113,7 +103,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 632);
             this.Controls.Add(this.axWindowsMediaPlayer1);
-            this.Controls.Add(this.buttonLire);
             this.Controls.Add(this.buttonSupprimer);
             this.Controls.Add(this.buttonModifier);
             this.Controls.Add(this.buttonAjout);
@@ -135,7 +124,6 @@
         private System.Windows.Forms.Button buttonAjout;
         private System.Windows.Forms.Button buttonModifier;
         private System.Windows.Forms.Button buttonSupprimer;
-        private System.Windows.Forms.Button buttonLire;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }
