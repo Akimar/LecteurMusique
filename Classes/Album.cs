@@ -37,18 +37,18 @@ namespace LecteurMusique.Classes
         }
 
 
-        private int nbMusiques;
+        private int? nbMusiques;
 
-        public int NbMusiques
+        public int? NbMusiques
         {
             get { return nbMusiques; }
             set { nbMusiques = value; }
         }
 
 
-        private int annee;
+        private int? annee;
 
-        public int Annee
+        public int? Annee
         {
             get { return annee; }
             set { annee = value; }

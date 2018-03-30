@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.labelNom = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxNom = new System.Windows.Forms.TextBox();
             this.labelArtiste = new System.Windows.Forms.Label();
             this.labelNbMusiques = new System.Windows.Forms.Label();
             this.labelAnnee = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxArtiste = new System.Windows.Forms.TextBox();
+            this.textBoxNbMusiques = new System.Windows.Forms.TextBox();
+            this.textBoxAnnee = new System.Windows.Forms.TextBox();
             this.buttonValider = new System.Windows.Forms.Button();
             this.buttonAnnuler = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxJaquette = new System.Windows.Forms.TextBox();
             this.labelJaquette = new System.Windows.Forms.Label();
             this.buttonJaquette = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -52,12 +52,12 @@
             this.labelNom.TabIndex = 0;
             this.labelNom.Text = "Nom";
             // 
-            // textBox1
+            // textBoxNom
             // 
-            this.textBox1.Location = new System.Drawing.Point(208, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(154, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBoxNom.Location = new System.Drawing.Point(208, 34);
+            this.textBoxNom.Name = "textBoxNom";
+            this.textBoxNom.Size = new System.Drawing.Size(154, 20);
+            this.textBoxNom.TabIndex = 1;
             // 
             // labelArtiste
             // 
@@ -86,26 +86,26 @@
             this.labelAnnee.TabIndex = 4;
             this.labelAnnee.Text = "Année";
             // 
-            // textBox2
+            // textBoxArtiste
             // 
-            this.textBox2.Location = new System.Drawing.Point(208, 74);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(154, 20);
-            this.textBox2.TabIndex = 5;
+            this.textBoxArtiste.Location = new System.Drawing.Point(208, 74);
+            this.textBoxArtiste.Name = "textBoxArtiste";
+            this.textBoxArtiste.Size = new System.Drawing.Size(154, 20);
+            this.textBoxArtiste.TabIndex = 5;
             // 
-            // textBox3
+            // textBoxNbMusiques
             // 
-            this.textBox3.Location = new System.Drawing.Point(208, 114);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(154, 20);
-            this.textBox3.TabIndex = 6;
+            this.textBoxNbMusiques.Location = new System.Drawing.Point(208, 114);
+            this.textBoxNbMusiques.Name = "textBoxNbMusiques";
+            this.textBoxNbMusiques.Size = new System.Drawing.Size(154, 20);
+            this.textBoxNbMusiques.TabIndex = 6;
             // 
-            // textBox4
+            // textBoxAnnee
             // 
-            this.textBox4.Location = new System.Drawing.Point(208, 160);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(154, 20);
-            this.textBox4.TabIndex = 7;
+            this.textBoxAnnee.Location = new System.Drawing.Point(208, 160);
+            this.textBoxAnnee.Name = "textBoxAnnee";
+            this.textBoxAnnee.Size = new System.Drawing.Size(154, 20);
+            this.textBoxAnnee.TabIndex = 7;
             // 
             // buttonValider
             // 
@@ -115,6 +115,7 @@
             this.buttonValider.TabIndex = 8;
             this.buttonValider.Text = "Valider";
             this.buttonValider.UseVisualStyleBackColor = true;
+            this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
             // 
             // buttonAnnuler
             // 
@@ -124,13 +125,14 @@
             this.buttonAnnuler.TabIndex = 9;
             this.buttonAnnuler.Text = "Annuler";
             this.buttonAnnuler.UseVisualStyleBackColor = true;
+            this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
             // 
-            // textBox5
+            // textBoxJaquette
             // 
-            this.textBox5.Location = new System.Drawing.Point(208, 205);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(154, 20);
-            this.textBox5.TabIndex = 10;
+            this.textBoxJaquette.Location = new System.Drawing.Point(208, 205);
+            this.textBoxJaquette.Name = "textBoxJaquette";
+            this.textBoxJaquette.Size = new System.Drawing.Size(154, 20);
+            this.textBoxJaquette.TabIndex = 10;
             // 
             // labelJaquette
             // 
@@ -143,12 +145,13 @@
             // 
             // buttonJaquette
             // 
-            this.buttonJaquette.Location = new System.Drawing.Point(379, 201);
+            this.buttonJaquette.Location = new System.Drawing.Point(379, 205);
             this.buttonJaquette.Name = "buttonJaquette";
             this.buttonJaquette.Size = new System.Drawing.Size(75, 23);
             this.buttonJaquette.TabIndex = 12;
             this.buttonJaquette.Text = "Ouvrir";
             this.buttonJaquette.UseVisualStyleBackColor = true;
+            this.buttonJaquette.Click += new System.EventHandler(this.buttonJaquette_Click);
             // 
             // AlbumWindow
             // 
@@ -157,16 +160,16 @@
             this.ClientSize = new System.Drawing.Size(568, 318);
             this.Controls.Add(this.buttonJaquette);
             this.Controls.Add(this.labelJaquette);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBoxJaquette);
             this.Controls.Add(this.buttonAnnuler);
             this.Controls.Add(this.buttonValider);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxAnnee);
+            this.Controls.Add(this.textBoxNbMusiques);
+            this.Controls.Add(this.textBoxArtiste);
             this.Controls.Add(this.labelAnnee);
             this.Controls.Add(this.labelNbMusiques);
             this.Controls.Add(this.labelArtiste);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxNom);
             this.Controls.Add(this.labelNom);
             this.Name = "AlbumWindow";
             this.Text = "Album";
@@ -178,16 +181,16 @@
         #endregion
 
         private System.Windows.Forms.Label labelNom;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxNom;
         private System.Windows.Forms.Label labelArtiste;
         private System.Windows.Forms.Label labelNbMusiques;
         private System.Windows.Forms.Label labelAnnee;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxArtiste;
+        private System.Windows.Forms.TextBox textBoxNbMusiques;
+        private System.Windows.Forms.TextBox textBoxAnnee;
         private System.Windows.Forms.Button buttonValider;
         private System.Windows.Forms.Button buttonAnnuler;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxJaquette;
         private System.Windows.Forms.Label labelJaquette;
         private System.Windows.Forms.Button buttonJaquette;
     }

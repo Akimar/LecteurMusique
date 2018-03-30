@@ -139,7 +139,7 @@ namespace LecteurMusique.BDD
             commande.Parameters.AddWithValue("@Annee", album.Annee);
             commande.Parameters.AddWithValue("@Artiste", album.Artiste);
             commande.Parameters.AddWithValue("@Jaquette", album.Jaquette);
-            
+
 
 
             connection.Open();
@@ -156,16 +156,13 @@ namespace LecteurMusique.BDD
             }
         }
 
-        public static bool updateMusique(Album album)
+        public static bool updateAlbum(Album album)
         {
-            long idArtiste = 0;
-            idArtiste = ArtisteRepository.getIdFromNom(album.ArtisteNom);
-
 
             SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
 
             SqlCommand commande = new SqlCommand();
-            commande.CommandText = @"UPDATE Musique
+            commande.CommandText = @"UPDATE Album
                                     SET
                                     Nom = @Nom
                                     ,NbMusiques = @NbMusiques
@@ -183,13 +180,14 @@ namespace LecteurMusique.BDD
             commande.Parameters.AddWithValue("@Annee", album.Annee);
             commande.Parameters.AddWithValue("@Artiste", album.Artiste);
             commande.Parameters.AddWithValue("@Jaquette", album.Jaquette);
-            
+            commande.Parameters.AddWithValue("@Identifiant", album.Identifiant);
+
             connection.Open();
 
             try
             {
                 commande.ExecuteNonQuery();
-                
+
                 return true;
             }
             catch (Exception ex)
@@ -197,4 +195,35 @@ namespace LecteurMusique.BDD
                 return false;
             }
         }
+
+        public static bool deleteAlbum(Album album)
+        {
+            SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
+
+            SqlCommand commande = new SqlCommand();
+            commande.CommandText = @"DELETE FROM Album
+                                     WHERE Identifiant = @Identifiant";
+            commande.Connection = connection;
+
+            //On spécifie que la requête est une commande "préparée"
+            commande.Prepare();
+
+            //On mappe les paramètres
+            commande.Parameters.AddWithValue("@Identifiant", album.Identifiant);
+
+            connection.Open();
+
+            try
+            {
+                commande.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+
+        }
+    }
 }
