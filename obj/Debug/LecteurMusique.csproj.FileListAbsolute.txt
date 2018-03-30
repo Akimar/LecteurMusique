@@ -20,3 +20,5 @@ D:\Debian\C#\1ere annee\LecteurMusique(old)\LecteurMusique\obj\Debug\AxInterop.W
 D:\Debian\C#\1ere annee\LecteurMusique(old)\LecteurMusique\obj\Debug\LecteurMusique.csproj.ResolveComReference.cache
 D:\Debian\C#\1ere annee\LecteurMusique(old)\LecteurMusique\obj\Debug\LecteurMusique.exe
 D:\Debian\C#\1ere annee\LecteurMusique(old)\LecteurMusique\obj\Debug\LecteurMusique.pdb
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.Windows.AlbumWindow.resources
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.Windows.MenuAlbum.resources

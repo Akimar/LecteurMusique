@@ -55,6 +55,12 @@
     <Compile Include="Classes\Artiste.cs" />
     <Compile Include="Classes\Genre.cs" />
     <Compile Include="Classes\Musique.cs" />
+    <Compile Include="Windows\AlbumWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\AlbumWindow.Designer.cs">
+      <DependentUpon>AlbumWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     <Compile Include="Windows\MusiqueWindow.Designer.cs">
       <DependentUpon>MusiqueWindow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Windows\AlbumWindow.resx">
+      <DependentUpon>AlbumWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>

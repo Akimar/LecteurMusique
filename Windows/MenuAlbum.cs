@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LecteurMusique.BDD;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,31 @@ namespace LecteurMusique.Windows
         public MenuAlbum()
         {
             InitializeComponent();
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void updateDataGrid()
+        {
+            this.dataGridView1.DataSource = AlbumRepository.getAlbums();
+            this.dataGridView1.Refresh();
+
+            foreach (DataGridViewColumn item in this.dataGridView1.Columns)
+            {
+
+                if (item.HeaderText == "ArtisteNom")
+                {
+                    item.HeaderText = "Artiste";
+                }
+            }
+        }
+
+        private void MenuAlbum_Load(object sender, EventArgs e)
+        {
+            updateDataGrid();
         }
     }
 }

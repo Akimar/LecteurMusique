@@ -115,5 +115,27 @@ namespace LecteurMusique.BDD
             }
         }
 
+        public static string getArtisteNom(long identifiantArtiste)
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
+
+                SqlCommand commande = new SqlCommand();
+                commande.CommandText = @"SELECT Nom FROM Artiste WHERE Identifiant = @identifiantArtiste";
+                commande.Connection = connection;
+
+                connection.Open();
+
+                commande.Prepare();
+                commande.Parameters.AddWithValue("@identifiantArtiste", identifiantArtiste);
+
+                return commande.ExecuteScalar().ToString();
+            }
+            catch (Exception)
+            {
+                return "";
+            }
+        }
     }
 }

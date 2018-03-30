@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LecteurMusique.Windows;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,12 @@ namespace LecteurMusique
         {
             MenuMusique windowToOpen = new MenuMusique();
             windowToOpen.ShowDialog();
+        }
+
+        private void buttonAlbum_Click(object sender, EventArgs e)
+        {
+            MenuAlbum windowToopen = new MenuAlbum();
+            windowToopen.ShowDialog();
         }
     }
 }

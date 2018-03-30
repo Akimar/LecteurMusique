@@ -80,6 +80,7 @@ namespace LecteurMusique.BDD
                 toAdd.NbMusiques = dataReader.GetInt32(2);
                 toAdd.Annee = dataReader.GetInt32(3);
                 toAdd.Artiste = dataReader.GetInt64(4);
+                toAdd.Jaquette = dataReader.GetString(5);
 
 
                 toReturn.Add(toAdd);

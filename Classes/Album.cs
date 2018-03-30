@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LecteurMusique.BDD;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,22 @@ namespace LecteurMusique.Classes
             set { nom = value; }
         }
 
+        private string artisteNom = null;
+        public string ArtisteNom
+        {
+            get
+            {
+                if (artisteNom == null)
+                {
+                    artisteNom = ArtisteRepository.getArtisteNom(Artiste);
+                }
+                return artisteNom;
+            }
+
+            set { artisteNom = value; }
+        }
+
+
         private int nbMusiques;
 
         public int NbMusiques
@@ -36,6 +53,8 @@ namespace LecteurMusique.Classes
             get { return annee; }
             set { annee = value; }
         }
+
+        public string Jaquette;
 
         public long Artiste;
 

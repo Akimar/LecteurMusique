@@ -62,6 +62,7 @@
             this.buttonAlbum.TabIndex = 5;
             this.buttonAlbum.Text = "Accéder aux albums";
             this.buttonAlbum.UseVisualStyleBackColor = true;
+            this.buttonAlbum.Click += new System.EventHandler(this.buttonAlbum_Click);
             // 
             // buttonArtiste
             // 
