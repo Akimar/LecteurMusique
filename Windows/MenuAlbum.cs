@@ -35,12 +35,29 @@ namespace LecteurMusique.Windows
                 {
                     item.HeaderText = "Artiste";
                 }
+
+                
+                if (item.HeaderText == "NbMusiques")
+                {
+                    item.HeaderText = "Nombre de pistes";
+                }
             }
         }
 
         private void MenuAlbum_Load(object sender, EventArgs e)
         {
             updateDataGrid();
+        }
+
+        private void butttonAjouter_Click(object sender, EventArgs e)
+        {
+            AlbumWindow windowToOpen = new AlbumWindow(null);
+            windowToOpen.ShowDialog();
+            if (windowToOpen.validate == true)
+            {
+                MusiqueRepository.addAlbum(windowToOpen.album);
+                updateDataGrid();
+            }
         }
     }
 }

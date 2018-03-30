@@ -116,5 +116,85 @@ namespace LecteurMusique.BDD
             }
             return false;
         }
-    }
+
+        public static bool addAlbum(Album album)
+        {
+            SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
+
+            SqlCommand commande = new SqlCommand();
+            commande.CommandText = @"INSERT INTO Album VALUES(
+                                     @Nom
+                                    ,@NbMusiques
+                                    ,@Annee
+                                    ,@Artiste
+                                    ,@Jaquette);";
+            commande.Connection = connection;
+
+            //on spécifie que la requête est une commande préparée
+            commande.Prepare();
+
+            //on mape les paramètres
+            commande.Parameters.AddWithValue("@Nom", album.Nom);
+            commande.Parameters.AddWithValue("@NbMusiques", album.NbMusiques);
+            commande.Parameters.AddWithValue("@Annee", album.Annee);
+            commande.Parameters.AddWithValue("@Artiste", album.Artiste);
+            commande.Parameters.AddWithValue("@Jaquette", album.Jaquette);
+            
+
+
+            connection.Open();
+
+            try
+            {
+                commande.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public static bool updateMusique(Album album)
+        {
+            long idArtiste = 0;
+            idArtiste = ArtisteRepository.getIdFromNom(album.ArtisteNom);
+
+
+            SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
+
+            SqlCommand commande = new SqlCommand();
+            commande.CommandText = @"UPDATE Musique
+                                    SET
+                                    Nom = @Nom
+                                    ,NbMusiques = @NbMusiques
+                                    ,Annee = @Annee
+                                    ,Artiste = @Artiste
+                                    ,Jaquette = @Jaquette
+                                    WHERE Identifiant = @Identifiant";
+            commande.Connection = connection;
+
+            //on spécifie que la requête est une commande préparée
+            commande.Prepare();
+
+            commande.Parameters.AddWithValue("@Nom", album.Nom);
+            commande.Parameters.AddWithValue("@NbMusiques", album.NbMusiques);
+            commande.Parameters.AddWithValue("@Annee", album.Annee);
+            commande.Parameters.AddWithValue("@Artiste", album.Artiste);
+            commande.Parameters.AddWithValue("@Jaquette", album.Jaquette);
+            
+            connection.Open();
+
+            try
+            {
+                commande.ExecuteNonQuery();
+                
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
 }
