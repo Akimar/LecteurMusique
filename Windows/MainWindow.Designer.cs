@@ -31,12 +31,15 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonMusique = new System.Windows.Forms.Button();
             this.buttonAlbum = new System.Windows.Forms.Button();
-            this.buttonArtiste = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(495, 535);
+            this.buttonClose.Location = new System.Drawing.Point(661, 543);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(75, 23);
             this.buttonClose.TabIndex = 3;
@@ -46,7 +49,7 @@
             // 
             // buttonMusique
             // 
-            this.buttonMusique.Location = new System.Drawing.Point(206, 108);
+            this.buttonMusique.Location = new System.Drawing.Point(546, 217);
             this.buttonMusique.Name = "buttonMusique";
             this.buttonMusique.Size = new System.Drawing.Size(149, 23);
             this.buttonMusique.TabIndex = 4;
@@ -56,7 +59,7 @@
             // 
             // buttonAlbum
             // 
-            this.buttonAlbum.Location = new System.Drawing.Point(206, 373);
+            this.buttonAlbum.Location = new System.Drawing.Point(546, 301);
             this.buttonAlbum.Name = "buttonAlbum";
             this.buttonAlbum.Size = new System.Drawing.Size(149, 23);
             this.buttonAlbum.TabIndex = 5;
@@ -64,26 +67,40 @@
             this.buttonAlbum.UseVisualStyleBackColor = true;
             this.buttonAlbum.Click += new System.EventHandler(this.buttonAlbum_Click);
             // 
-            // buttonArtiste
+            // dataGridView1
             // 
-            this.buttonArtiste.Location = new System.Drawing.Point(206, 241);
-            this.buttonArtiste.Name = "buttonArtiste";
-            this.buttonArtiste.Size = new System.Drawing.Size(149, 23);
-            this.buttonArtiste.TabIndex = 6;
-            this.buttonArtiste.Text = "Accéder aux artistes";
-            this.buttonArtiste.UseVisualStyleBackColor = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(495, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(254, 135);
+            this.dataGridView1.TabIndex = 6;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(32, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(441, 467);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 570);
-            this.Controls.Add(this.buttonArtiste);
+            this.ClientSize = new System.Drawing.Size(797, 602);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonAlbum);
             this.Controls.Add(this.buttonMusique);
             this.Controls.Add(this.buttonClose);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainWindow";
             this.Text = "Lecteur de musique";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -92,7 +109,8 @@
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Button buttonMusique;
         private System.Windows.Forms.Button buttonAlbum;
-        private System.Windows.Forms.Button buttonArtiste;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
