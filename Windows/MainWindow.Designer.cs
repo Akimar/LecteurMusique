@@ -134,6 +134,7 @@
             this.MinimizeBox = false;
             this.Name = "MainWindow";
             this.Text = "Lecteur de musique";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

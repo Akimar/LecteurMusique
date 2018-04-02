@@ -61,6 +61,12 @@
     <Compile Include="Windows\AlbumWindow.Designer.cs">
       <DependentUpon>AlbumWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ArtisteWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\ArtisteWindow.Designer.cs">
+      <DependentUpon>ArtisteWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     </Compile>
     <EmbeddedResource Include="Windows\AlbumWindow.resx">
       <DependentUpon>AlbumWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ArtisteWindow.resx">
+      <DependentUpon>ArtisteWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

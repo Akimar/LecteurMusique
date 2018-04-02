@@ -22,3 +22,4 @@ D:\Debian\C#\1ere annee\LecteurMusique(old)\LecteurMusique\obj\Debug\LecteurMusi
 D:\Debian\C#\1ere annee\LecteurMusique(old)\LecteurMusique\obj\Debug\LecteurMusique.pdb
 D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.Windows.AlbumWindow.resources
 D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.Windows.MenuAlbum.resources
+D:\Debian\C#\1ere annee\LecteurMusique\LecteurMusique\obj\Debug\LecteurMusique.Windows.ArtisteWindow.resources

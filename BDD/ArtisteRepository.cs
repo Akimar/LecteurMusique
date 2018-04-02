@@ -70,6 +70,7 @@ namespace LecteurMusique.BDD
             SqlCommand commande = new SqlCommand();
             commande.CommandText = @"SELECT Identifiant
                                         ,Nom
+                                        ,Image
                                          FROM Artiste";
             commande.Connection = connection;
 
@@ -136,6 +137,74 @@ namespace LecteurMusique.BDD
             catch (Exception)
             {
                 return "";
+            }
+        }
+
+        public static bool addArtiste(Artiste artiste)
+        {
+            SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
+
+            SqlCommand commande = new SqlCommand();
+            commande.CommandText = @"INSERT INTO Artiste VALUES(
+                                     @Nom
+                                    ,@Image);";
+            commande.Connection = connection;
+
+            //on spécifie que la requête est une commande préparée
+            commande.Prepare();
+
+            //on mape les paramètres
+            commande.Parameters.AddWithValue("@Nom", artiste.Nom);
+            commande.Parameters.AddWithValue("@Image", artiste.Image);
+           
+
+
+
+            connection.Open();
+
+            try
+            {
+                commande.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public static bool updateArtiste(Artiste artiste)
+        {
+
+            SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
+
+            SqlCommand commande = new SqlCommand();
+            commande.CommandText = @"UPDATE Artiste
+                                    SET
+                                    Nom = @Nom
+                                    ,Image = @Image
+                                    WHERE Identifiant = @Identifiant";
+            commande.Connection = connection;
+
+            //on spécifie que la requête est une commande préparée
+            commande.Prepare();
+
+            commande.Parameters.AddWithValue("@Nom", artiste.Nom);
+            commande.Parameters.AddWithValue("@Image", artiste.Image);
+            commande.Parameters.AddWithValue("@Identifiant", artiste.Identifiant);
+           
+            connection.Open();
+
+            try
+            {
+                commande.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
         }
     }

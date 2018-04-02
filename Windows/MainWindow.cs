@@ -77,7 +77,7 @@ namespace LecteurMusique
             windowToOpen.ShowDialog();
             if (windowToOpen.validate == true)
             {
-                ArtisteWindow.addArtiste(windowToOpen.artiste);
+                ArtisteRepository.addArtiste(windowToOpen.artiste);
                 updateDataGrid();
             }
         }
@@ -103,7 +103,7 @@ namespace LecteurMusique
 
                 if (windowToOpen.validate == true)
                 {
-                    ArtisteWindow.updateArtiste(windowToOpen.artiste);
+                    ArtisteRepository.updateArtiste(windowToOpen.artiste);
                     updateDataGrid();
 
                 }
@@ -112,6 +112,11 @@ namespace LecteurMusique
             {
                 MessageBox.Show("Merci de ne séléctionner qu'un et un seul album.");
             }
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+            updateDataGrid();
         }
     }
 }
