@@ -83,6 +83,7 @@ namespace LecteurMusique.BDD
 
                 toAdd.Identifiant = dataReader.GetInt64(0);
                 toAdd.Nom = dataReader.GetString(1);
+                toAdd.Image = dataReader.GetString(2);
 
 
                 toReturn.Add(toAdd);

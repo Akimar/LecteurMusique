@@ -33,6 +33,9 @@
             this.buttonAlbum = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonAjouter = new System.Windows.Forms.Button();
+            this.buttonModifier = new System.Windows.Forms.Button();
+            this.Supprimer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +52,7 @@
             // 
             // buttonMusique
             // 
-            this.buttonMusique.Location = new System.Drawing.Point(546, 217);
+            this.buttonMusique.Location = new System.Drawing.Point(54, 543);
             this.buttonMusique.Name = "buttonMusique";
             this.buttonMusique.Size = new System.Drawing.Size(149, 23);
             this.buttonMusique.TabIndex = 4;
@@ -59,7 +62,7 @@
             // 
             // buttonAlbum
             // 
-            this.buttonAlbum.Location = new System.Drawing.Point(546, 301);
+            this.buttonAlbum.Location = new System.Drawing.Point(313, 543);
             this.buttonAlbum.Name = "buttonAlbum";
             this.buttonAlbum.Size = new System.Drawing.Size(149, 23);
             this.buttonAlbum.TabIndex = 5;
@@ -84,11 +87,43 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // buttonAjouter
+            // 
+            this.buttonAjouter.Location = new System.Drawing.Point(579, 204);
+            this.buttonAjouter.Name = "buttonAjouter";
+            this.buttonAjouter.Size = new System.Drawing.Size(75, 23);
+            this.buttonAjouter.TabIndex = 8;
+            this.buttonAjouter.Text = "Ajouter";
+            this.buttonAjouter.UseVisualStyleBackColor = true;
+            this.buttonAjouter.Click += new System.EventHandler(this.buttonAjouter_Click);
+            // 
+            // buttonModifier
+            // 
+            this.buttonModifier.Location = new System.Drawing.Point(579, 275);
+            this.buttonModifier.Name = "buttonModifier";
+            this.buttonModifier.Size = new System.Drawing.Size(75, 23);
+            this.buttonModifier.TabIndex = 9;
+            this.buttonModifier.Text = "Modifier";
+            this.buttonModifier.UseVisualStyleBackColor = true;
+            this.buttonModifier.Click += new System.EventHandler(this.butttonModifier_Click);
+            // 
+            // Supprimer
+            // 
+            this.Supprimer.Location = new System.Drawing.Point(579, 346);
+            this.Supprimer.Name = "Supprimer";
+            this.Supprimer.Size = new System.Drawing.Size(75, 23);
+            this.Supprimer.TabIndex = 10;
+            this.Supprimer.Text = "Supprimer";
+            this.Supprimer.UseVisualStyleBackColor = true;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 602);
+            this.Controls.Add(this.Supprimer);
+            this.Controls.Add(this.buttonModifier);
+            this.Controls.Add(this.buttonAjouter);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonAlbum);
@@ -111,6 +146,9 @@
         private System.Windows.Forms.Button buttonAlbum;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonAjouter;
+        private System.Windows.Forms.Button buttonModifier;
+        private System.Windows.Forms.Button Supprimer;
     }
 }
 

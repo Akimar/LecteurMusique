@@ -17,12 +17,40 @@ namespace LecteurMusique.Windows
         public MenuAlbum()
         {
             InitializeComponent();
+
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+       private void loadImages()
+        {
+            if (this.dataGridView1.SelectedRows.Count == 1)
+            {
+                Album albumImageToLoad = null;
+
+                foreach (DataGridViewRow item in this.dataGridView1.SelectedRows.OfType<DataGridViewRow>())
+                {
+                    if (item.DataBoundItem.GetType() == typeof(Album))
+                    {
+                        albumImageToLoad = item.DataBoundItem as Album;
+
+                        pictureBox1.Image = Bitmap.FromFile(albumImageToLoad.Jaquette);
+                        pictureBox1.Update();
+
+                    }
+
+                }
+
+                
+            }
+            else
+            {
+                MessageBox.Show("Merci de ne séléctionner qu'un et un seul album.");
+            }
+      }
 
         private void updateDataGrid()
         {
@@ -84,6 +112,7 @@ namespace LecteurMusique.Windows
                 {
                     AlbumRepository.updateAlbum(windowToOpen.album);
                     updateDataGrid();
+                   
                 }
             }
             else
@@ -115,6 +144,17 @@ namespace LecteurMusique.Windows
             else
             {
                 MessageBox.Show("Merci de sélectionner un album !");
+            }
+        }
+
+        private void datagridview_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+           
+            if (dgv.CurrentRow.Selected)
+            {
+                loadImages();
+               
             }
         }
     }

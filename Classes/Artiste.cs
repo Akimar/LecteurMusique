@@ -19,6 +19,9 @@ namespace LecteurMusique.Classes
             get { return nom; }
             set { nom = value; }
         }
+
+        public string Image;
+
         #endregion
 
         #region Constructeurs
