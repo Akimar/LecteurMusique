@@ -117,8 +117,8 @@ namespace LecteurMusique.BDD
 
         public static bool updateMusique(Musique musique)
         {
-            long idArtiste = 0;
-            idArtiste = ArtisteRepository.getIdFromNom(musique.ArtisteNom);
+            //long idArtiste = 0;
+            //idArtiste = ArtisteRepository.getIdFromNom(musique.ArtisteNom);
             
 
             SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
