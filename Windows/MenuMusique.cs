@@ -140,6 +140,29 @@ namespace LecteurMusique
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+            //if (this.dataGridView1.SelectedRows.Count == 1)
+            //{
+            //    Musique musiqueToPlay = null;
+
+            //    foreach (DataGridViewRow item in this.dataGridView1.SelectedRows.OfType<DataGridViewRow>())
+            //    {
+            //        if (item.DataBoundItem.GetType() == typeof(Musique))
+            //        {
+            //            musiqueToPlay = item.DataBoundItem as Musique;
+
+            //        }
+            //    }
+
+            //    if (musiqueToPlay != null)
+            //    {
+            //        LoadMusic(musiqueToPlay.CheminFichier);
+            //    }
+            //}
+
+        }
+
+        private void buttonLire_Click(object sender, EventArgs e)
+        {
             if (this.dataGridView1.SelectedRows.Count == 1)
             {
                 Musique musiqueToPlay = null;
@@ -158,7 +181,6 @@ namespace LecteurMusique
                     LoadMusic(musiqueToPlay.CheminFichier);
                 }
             }
-
         }
     }
 }

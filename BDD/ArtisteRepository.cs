@@ -207,5 +207,62 @@ namespace LecteurMusique.BDD
                 return false;
             }
         }
+
+        public static bool deleteArtiste(Artiste artiste)
+        {
+         
+
+            SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
+
+            SqlCommand commande = new SqlCommand();
+            commande.CommandText = @"DELETE FROM Musique WHERE Identifiant IN
+                                   (SELECT m.Identifiant FROM Musique m INNER JOIN Compose c ON m.Identifiant =             c.IdentifiantMusique WHERE c.IdentifiantArtiste =@identifiant)";
+            commande.Connection = connection;   
+
+            commande.Prepare();
+
+            commande.Parameters.AddWithValue("@identifiant", artiste.Identifiant);
+
+            SqlCommand commande2 = new SqlCommand();
+            commande2.CommandText = @"DELETE FROM Album
+                                     WHERE Artiste = @identifiant";
+            commande2.Connection = connection;
+
+            commande2.Prepare();
+
+            commande2.Parameters.AddWithValue("@identifiant", artiste.Identifiant);
+
+
+            SqlCommand commande3 = new SqlCommand();
+            commande3.CommandText = @"DELETE FROM Artiste
+                                     WHERE Identifiant = @identifiant";
+            commande3.Connection = connection;
+
+            commande3.Prepare();
+
+            commande3.Parameters.AddWithValue("@identifiant", artiste.Identifiant);
+
+
+            connection.Open();
+
+            try
+            {
+                commande.ExecuteNonQuery();
+                commande2.ExecuteNonQuery();
+                commande3.ExecuteNonQuery();
+                
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+
+        }
+
+
+     
     }
 }

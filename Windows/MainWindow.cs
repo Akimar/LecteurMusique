@@ -118,5 +118,42 @@ namespace LecteurMusique
         {
             updateDataGrid();
         }
+
+        private void buttonSupprimer_Click(object sender, EventArgs e)
+        {
+            if (this.dataGridView1.SelectedRows.Count == 1)
+            {
+                Artiste artisteToDelete = null;
+                foreach (DataGridViewRow item in this.dataGridView1.SelectedRows.OfType<DataGridViewRow>())
+                {
+                    if (item.DataBoundItem.GetType() == typeof(Artiste))
+                    {
+                        artisteToDelete = item.DataBoundItem as Artiste;
+
+                    }
+                }
+
+                if (MessageBox.Show("Êtes-vous sur de vouloir supprimer cet artiste ?", "Suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    ArtisteRepository.deleteArtiste(artisteToDelete);
+                }
+                updateDataGrid();
+            }
+            else
+            {
+                MessageBox.Show("Merci de sélectionner un artiste !");
+            }
+        }
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+
+            if (dgv.CurrentRow.Selected)
+            {
+                loadImages();
+
+            }
+        }
     }
 }

@@ -77,6 +77,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(254, 135);
             this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // pictureBox1
             // 
@@ -115,6 +116,7 @@
             this.Supprimer.TabIndex = 10;
             this.Supprimer.Text = "Supprimer";
             this.Supprimer.UseVisualStyleBackColor = true;
+            this.Supprimer.Click += new System.EventHandler(this.buttonSupprimer_Click);
             // 
             // MainWindow
             // 
