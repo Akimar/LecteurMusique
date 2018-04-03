@@ -42,9 +42,9 @@
             this.comboBoxGenre = new System.Windows.Forms.ComboBox();
             this.labelChemin = new System.Windows.Forms.Label();
             this.buttonChemin = new System.Windows.Forms.Button();
-            this.textBoxArtiste = new System.Windows.Forms.TextBox();
-            this.textBoxAlbum = new System.Windows.Forms.TextBox();
             this.textBoxChemin = new System.Windows.Forms.TextBox();
+            this.comboBoxArtiste = new System.Windows.Forms.ComboBox();
+            this.comboBoxAlbum = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // buttonAnnuler
@@ -169,20 +169,6 @@
             this.buttonChemin.UseVisualStyleBackColor = true;
             this.buttonChemin.Click += new System.EventHandler(this.buttonChemin_Click);
             // 
-            // textBoxArtiste
-            // 
-            this.textBoxArtiste.Location = new System.Drawing.Point(264, 82);
-            this.textBoxArtiste.Name = "textBoxArtiste";
-            this.textBoxArtiste.Size = new System.Drawing.Size(144, 20);
-            this.textBoxArtiste.TabIndex = 39;
-            // 
-            // textBoxAlbum
-            // 
-            this.textBoxAlbum.Location = new System.Drawing.Point(264, 118);
-            this.textBoxAlbum.Name = "textBoxAlbum";
-            this.textBoxAlbum.Size = new System.Drawing.Size(144, 20);
-            this.textBoxAlbum.TabIndex = 40;
-            // 
             // textBoxChemin
             // 
             this.textBoxChemin.Location = new System.Drawing.Point(264, 268);
@@ -190,14 +176,30 @@
             this.textBoxChemin.Size = new System.Drawing.Size(144, 20);
             this.textBoxChemin.TabIndex = 41;
             // 
+            // comboBoxArtiste
+            // 
+            this.comboBoxArtiste.FormattingEnabled = true;
+            this.comboBoxArtiste.Location = new System.Drawing.Point(264, 82);
+            this.comboBoxArtiste.Name = "comboBoxArtiste";
+            this.comboBoxArtiste.Size = new System.Drawing.Size(144, 21);
+            this.comboBoxArtiste.TabIndex = 42;
+            // 
+            // comboBoxAlbum
+            // 
+            this.comboBoxAlbum.FormattingEnabled = true;
+            this.comboBoxAlbum.Location = new System.Drawing.Point(264, 118);
+            this.comboBoxAlbum.Name = "comboBoxAlbum";
+            this.comboBoxAlbum.Size = new System.Drawing.Size(144, 21);
+            this.comboBoxAlbum.TabIndex = 43;
+            // 
             // MusiqueWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 438);
+            this.Controls.Add(this.comboBoxAlbum);
+            this.Controls.Add(this.comboBoxArtiste);
             this.Controls.Add(this.textBoxChemin);
-            this.Controls.Add(this.textBoxAlbum);
-            this.Controls.Add(this.textBoxArtiste);
             this.Controls.Add(this.buttonChemin);
             this.Controls.Add(this.labelChemin);
             this.Controls.Add(this.comboBoxGenre);
@@ -235,8 +237,8 @@
         private System.Windows.Forms.ComboBox comboBoxGenre;
         private System.Windows.Forms.Label labelChemin;
         private System.Windows.Forms.Button buttonChemin;
-        private System.Windows.Forms.TextBox textBoxArtiste;
-        private System.Windows.Forms.TextBox textBoxAlbum;
         private System.Windows.Forms.TextBox textBoxChemin;
+        private System.Windows.Forms.ComboBox comboBoxArtiste;
+        private System.Windows.Forms.ComboBox comboBoxAlbum;
     }
 }
