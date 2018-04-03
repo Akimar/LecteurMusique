@@ -70,9 +70,9 @@ namespace LecteurMusique.BDD
             SqlCommand commande = new SqlCommand();
             commande.CommandText = @"SELECT a.Identifiant
                                         ,a.Nom
-                                        ,AVG(m.Note)
+                                        ,isnull(AVG(isnull(m.Note, 0)), 0)
                                         ,a.Image
-                                        FROM Artiste a INNER JOIN Compose c ON a.Identifiant = c.IdentifiantArtiste INNER JOIN Musique m ON c.IdentifiantMusique = m.Identifiant GROUP BY a.Identifiant, a.Nom, a.Image";
+                                        FROM Artiste a LEFt JOIN Compose c ON a.Identifiant = c.IdentifiantArtiste LEFt JOIN Musique m ON c.IdentifiantMusique = m.Identifiant GROUP BY a.Identifiant, a.Nom, a.Image";
             commande.Connection = connection;
 
             connection.Open();

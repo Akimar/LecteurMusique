@@ -33,9 +33,6 @@ namespace LecteurMusique.Windows
         {
             InitializeComponent();
 
-            this.comboBoxGenre.DataSource = GenreRepository.getGenres();
-            this.comboBoxArtiste.DataSource = ArtisteRepository.getArtistes();
-            this.comboBoxAlbum.DataSource = AlbumRepository.getAlbums();
 
             // va chercher la propriete get Libelle
             this.comboBoxGenre.DisplayMember = "Libelle";
@@ -53,6 +50,12 @@ namespace LecteurMusique.Windows
                 //si == null on ajoute une nouvelle musique
                 musique = new Musique();
             }
+
+
+
+            this.comboBoxGenre.DataSource = GenreRepository.getGenres();
+            this.comboBoxArtiste.DataSource = ArtisteRepository.getArtistes();
+            this.comboBoxAlbum.DataSource = AlbumRepository.getAlbums();
 
             this.textBoxTitre.Text = musique.Titre;
             //this.comboBoxArtiste.Text = musique.ArtisteNom;
@@ -257,6 +260,9 @@ namespace LecteurMusique.Windows
                 //this.musique.Album = AlbumRepository.getIdFromNom(this.comboBoxAlbum.Text);
                 //this.musique.Artiste = ArtisteRepository.getIdFromNom(this.comboBoxArtiste.Text);
 
+                //this.comboBoxGenre.DataSource = GenreRepository.getGenres();
+                //this.comboBoxArtiste.DataSource = ArtisteRepository.getArtistes();
+                //this.comboBoxAlbum.DataSource = AlbumRepository.getAlbumsFromArtisteId(this.musique.Artiste = ((Artiste)this.comboBoxArtiste.SelectedItem).Identifiant);
 
 
                 this.validate = true;
@@ -281,5 +287,7 @@ namespace LecteurMusique.Windows
             }
 
         }
+
+      
     }
 }

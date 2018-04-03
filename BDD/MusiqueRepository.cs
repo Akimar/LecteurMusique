@@ -90,8 +90,7 @@ namespace LecteurMusique.BDD
 
         public static bool addCompose(long idArtiste, long idMusique)
         {
-            try
-            {
+           
                 SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
 
                 SqlCommand commande = new SqlCommand();
@@ -104,6 +103,9 @@ namespace LecteurMusique.BDD
                 commande.Prepare();
                 commande.Parameters.AddWithValue("@idArtiste", idArtiste);
                 commande.Parameters.AddWithValue("@idMusique", idMusique);
+            try
+            {
+
                 commande.ExecuteNonQuery();
                 return true;
             }
@@ -215,6 +217,37 @@ namespace LecteurMusique.BDD
             }
 
 
+        }
+
+        public static long getArtisteFromMusiqueId(long idMusique)
+        {
+            SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
+
+            SqlCommand commande = new SqlCommand();
+            commande.CommandText = @"SELECT IdentifiantArtiste FROM Compose WHERE IdentifiantMusique = @idMusique;
+                                   ";
+            commande.Connection = connection;
+
+            //on spécifie que la requête est une commande préparée
+            commande.Prepare();
+
+            //on mape les paramètres
+            commande.Parameters.AddWithValue("@idMusique", idMusique);
+           
+
+
+            connection.Open();
+
+            try
+            {
+                long idArtiste = long.Parse(commande.ExecuteScalar().ToString());
+                
+                return idArtiste;
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
         }
 
     }

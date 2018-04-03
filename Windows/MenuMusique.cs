@@ -91,6 +91,7 @@ namespace LecteurMusique
                     if (item.DataBoundItem.GetType() == typeof(Musique))
                     {
                         musiqueToUpdate = item.DataBoundItem as Musique;
+                        musiqueToUpdate.Artiste = MusiqueRepository.getArtisteFromMusiqueId(musiqueToUpdate.Identifiant);
                         
                     }
 
