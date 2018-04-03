@@ -88,20 +88,21 @@ namespace LecteurMusique.BDD
             return toReturn;
         }
 
-        public static bool albumExist(string nomAlbum)
+        public static bool albumArtisteExist(string nomAlbum, long idArtiste)
         {
             try
             {
                 SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
 
                 SqlCommand commande = new SqlCommand();
-                commande.CommandText = @"SELECT * FROM Album WHERE Nom = @nomAlbum";
+                commande.CommandText = @"SELECT * FROM Album WHERE Nom = @nomAlbum AND Artiste = @idArtiste";
                 commande.Connection = connection;
 
                 connection.Open();
 
                 commande.Prepare();
                 commande.Parameters.AddWithValue("@nomAlbum", nomAlbum);
+                commande.Parameters.AddWithValue("@idArtiste", idArtiste);
 
                 SqlDataReader reader = commande.ExecuteReader();
 

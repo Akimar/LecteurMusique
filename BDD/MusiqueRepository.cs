@@ -160,7 +160,7 @@ namespace LecteurMusique.BDD
 
             //on mape les paramètres
             commande2.Parameters.AddWithValue("@IdentifiantMusique", musique.Identifiant);
-            commande2.Parameters.AddWithValue("@Artiste", idArtiste);
+            commande2.Parameters.AddWithValue("@Artiste", musique.Artiste);
 
             connection.Open();
 

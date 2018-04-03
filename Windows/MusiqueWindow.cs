@@ -232,14 +232,14 @@ namespace LecteurMusique.Windows
             //    messageErreur += "\nL'artiste \""+ this.textBoxArtiste.Text+ "\" n'existe pas. Il faut l'ajouter au préalable. Vous devez accéder aux aristes et l'ajouter.";
             //}
 
-            //verifie si l album existe
-            //if (AlbumRepository.albumExist(this.textBoxAlbum.Text) == false && textBoxAlbum.Text != "")
-            //{
-            //    verifOk = false;
-            //    messageErreur += "\nL'album \""+ this.textBoxAlbum.Text+"\" n'existe pas. Il faut l'ajouter au préalable. Vous devez accéder aux albums et l'ajouter.";
-            //}
+            //verifie si l album existe dans le groupe
+            if (AlbumRepository.albumArtisteExist(this.comboBoxAlbum.Text, ((Artiste)this.comboBoxArtiste.SelectedItem).Identifiant) == false)
+            {
+                verifOk = false;
+                messageErreur += "\nL'album \"" + this.comboBoxAlbum.Text + "\" n'existe pas pour le groupe choisi. ";
+            }
 
-            if(messageErreur != "")
+            if (messageErreur != "")
             {
                 MessageBox.Show(messageErreur);
             }
