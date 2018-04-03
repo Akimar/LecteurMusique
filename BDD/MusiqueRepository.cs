@@ -53,7 +53,6 @@ namespace LecteurMusique.BDD
             commande.CommandText = @"INSERT INTO Musique VALUES(
                                      @Titre
                                     ,@Duree
-                                    ,@Format
                                     ,@Genre
                                     ,@Album
                                     ,@CheminFichier
@@ -127,7 +126,6 @@ namespace LecteurMusique.BDD
                                     SET
                                     Titre = @Titre
                                     ,Duree = @Duree
-                                    ,Format = @Format
                                     ,Genre = @Genre
                                     ,Album = @Album
                                     ,CheminFichier = @CheminFichier

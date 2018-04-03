@@ -61,6 +61,7 @@ namespace LecteurMusique
         {
             MenuMusique windowToOpen = new MenuMusique();
             windowToOpen.ShowDialog();
+            updateDataGrid();
         }
 
         private void buttonAlbum_Click(object sender, EventArgs e)
