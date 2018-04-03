@@ -46,10 +46,7 @@ namespace LecteurMusique.Windows
 
                 
             }
-            else
-            {
-                MessageBox.Show("Merci de ne séléctionner qu'un et un seul album.");
-            }
+           
       }
 
         private void updateDataGrid()
@@ -76,6 +73,8 @@ namespace LecteurMusique.Windows
         private void MenuAlbum_Load(object sender, EventArgs e)
         {
             updateDataGrid();
+            dataGridView1.Rows[0].Selected = true;
+            loadImages();
         }
 
         private void butttonAjouter_Click(object sender, EventArgs e)

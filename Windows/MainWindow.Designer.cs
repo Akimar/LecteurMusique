@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonMusique = new System.Windows.Forms.Button();
             this.buttonAlbum = new System.Windows.Forms.Button();
@@ -81,6 +82,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(32, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(441, 467);
@@ -110,6 +112,7 @@
             // 
             // Supprimer
             // 
+            this.Supprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Supprimer.Location = new System.Drawing.Point(579, 346);
             this.Supprimer.Name = "Supprimer";
             this.Supprimer.Size = new System.Drawing.Size(75, 23);
@@ -122,6 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(797, 602);
             this.Controls.Add(this.Supprimer);
             this.Controls.Add(this.buttonModifier);
@@ -132,6 +136,7 @@
             this.Controls.Add(this.buttonMusique);
             this.Controls.Add(this.buttonClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainWindow";

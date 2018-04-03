@@ -18,7 +18,8 @@ namespace LecteurMusique
         public MainWindow()
         {
             InitializeComponent();
-          
+           
+
         }
 
         private void updateDataGrid()
@@ -49,10 +50,7 @@ namespace LecteurMusique
 
 
             }
-            else
-            {
-                MessageBox.Show("Merci de ne séléctionner qu'un et un seul album.");
-            }
+           
         }
         private void buttonClose_Click(object sender, EventArgs e)
         {
@@ -117,6 +115,8 @@ namespace LecteurMusique
         private void MainWindow_Load(object sender, EventArgs e)
         {
             updateDataGrid();
+            dataGridView1.Rows[0].Selected = true;
+            loadImages();
         }
 
         private void buttonSupprimer_Click(object sender, EventArgs e)
@@ -138,6 +138,7 @@ namespace LecteurMusique
                     ArtisteRepository.deleteArtiste(artisteToDelete);
                 }
                 updateDataGrid();
+                pictureBox1.Update();
             }
             else
             {

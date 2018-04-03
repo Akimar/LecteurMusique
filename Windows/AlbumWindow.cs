@@ -146,7 +146,7 @@ namespace LecteurMusique.Windows
             if (ArtisteRepository.artisteExist(this.textBoxArtiste.Text) == false && textBoxArtiste.Text != "")
             {
                 verifOk = false;
-                MessageBox.Show("\nL'artiste \"" + this.textBoxArtiste.Text + "\" n'existe pas.");
+                MessageBox.Show("\nL'artiste \"" + this.textBoxArtiste.Text + "\" n'existe pas. Il faut l'ajouter au préalable. Vous devez accéder aux aristes et l'ajouter.");
             }
 
            
