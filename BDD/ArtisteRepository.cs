@@ -68,10 +68,11 @@ namespace LecteurMusique.BDD
             SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
 
             SqlCommand commande = new SqlCommand();
-            commande.CommandText = @"SELECT Identifiant
-                                        ,Nom
-                                        ,Image
-                                         FROM Artiste";
+            commande.CommandText = @"SELECT a.Identifiant
+                                        ,a.Nom
+                                        ,AVG(m.Note)
+                                        ,a.Image
+                                        FROM Artiste a INNER JOIN Compose c ON a.Identifiant = c.IdentifiantArtiste INNER JOIN Musique m ON c.IdentifiantMusique = m.Identifiant GROUP BY a.Identifiant, a.Nom, a.Image";
             commande.Connection = connection;
 
             connection.Open();
@@ -84,7 +85,9 @@ namespace LecteurMusique.BDD
 
                 toAdd.Identifiant = dataReader.GetInt64(0);
                 toAdd.Nom = dataReader.GetString(1);
-                toAdd.Image = dataReader.GetString(2);
+                toAdd.Note = dataReader.GetInt32(2);
+                toAdd.Image = dataReader.GetString(3);
+                
 
 
                 toReturn.Add(toAdd);

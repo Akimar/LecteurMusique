@@ -20,6 +20,14 @@ namespace LecteurMusique.Classes
             set { nom = value; }
         }
 
+        private int note;
+
+        public int Note
+        {
+            get { return note; }
+            set { note = value; }
+        }
+
         public string Image;
 
         #endregion

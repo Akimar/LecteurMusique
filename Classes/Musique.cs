@@ -60,13 +60,13 @@ namespace LecteurMusique.Classes
             set { duree = value; }
         }
 
-        private string format;
+        //private string format;
 
-        public string Format
-        {
-            get { return format; }
-            set { format = value; }
-        }
+        //public string Format
+        //{
+        //    get { return format; }
+        //    set { format = value; }
+        //}
 
         private int? note;
 

@@ -31,11 +31,9 @@
             this.buttonAnnuler = new System.Windows.Forms.Button();
             this.buttonValider = new System.Windows.Forms.Button();
             this.textBoxNote = new System.Windows.Forms.TextBox();
-            this.textBoxFormat = new System.Windows.Forms.TextBox();
             this.textBoxTitre = new System.Windows.Forms.TextBox();
             this.labelGenre = new System.Windows.Forms.Label();
             this.labelNote = new System.Windows.Forms.Label();
-            this.labeFormat = new System.Windows.Forms.Label();
             this.labelAlbum = new System.Windows.Forms.Label();
             this.labelArtiste = new System.Windows.Forms.Label();
             this.labelTitre = new System.Windows.Forms.Label();
@@ -71,17 +69,10 @@
             // 
             // textBoxNote
             // 
-            this.textBoxNote.Location = new System.Drawing.Point(264, 230);
+            this.textBoxNote.Location = new System.Drawing.Point(264, 188);
             this.textBoxNote.Name = "textBoxNote";
             this.textBoxNote.Size = new System.Drawing.Size(144, 20);
             this.textBoxNote.TabIndex = 27;
-            // 
-            // textBoxFormat
-            // 
-            this.textBoxFormat.Location = new System.Drawing.Point(264, 188);
-            this.textBoxFormat.Name = "textBoxFormat";
-            this.textBoxFormat.Size = new System.Drawing.Size(144, 20);
-            this.textBoxFormat.TabIndex = 26;
             // 
             // textBoxTitre
             // 
@@ -93,7 +84,7 @@
             // labelGenre
             // 
             this.labelGenre.AutoSize = true;
-            this.labelGenre.Location = new System.Drawing.Point(159, 266);
+            this.labelGenre.Location = new System.Drawing.Point(161, 225);
             this.labelGenre.Name = "labelGenre";
             this.labelGenre.Size = new System.Drawing.Size(36, 13);
             this.labelGenre.TabIndex = 21;
@@ -102,20 +93,11 @@
             // labelNote
             // 
             this.labelNote.AutoSize = true;
-            this.labelNote.Location = new System.Drawing.Point(159, 230);
+            this.labelNote.Location = new System.Drawing.Point(161, 188);
             this.labelNote.Name = "labelNote";
             this.labelNote.Size = new System.Drawing.Size(30, 13);
             this.labelNote.TabIndex = 20;
             this.labelNote.Text = "Note";
-            // 
-            // labeFormat
-            // 
-            this.labeFormat.AutoSize = true;
-            this.labeFormat.Location = new System.Drawing.Point(161, 191);
-            this.labeFormat.Name = "labeFormat";
-            this.labeFormat.Size = new System.Drawing.Size(39, 13);
-            this.labeFormat.TabIndex = 19;
-            this.labeFormat.Text = "Format";
             // 
             // labelAlbum
             // 
@@ -163,7 +145,7 @@
             // comboBoxGenre
             // 
             this.comboBoxGenre.FormattingEnabled = true;
-            this.comboBoxGenre.Location = new System.Drawing.Point(264, 263);
+            this.comboBoxGenre.Location = new System.Drawing.Point(264, 225);
             this.comboBoxGenre.Name = "comboBoxGenre";
             this.comboBoxGenre.Size = new System.Drawing.Size(144, 21);
             this.comboBoxGenre.TabIndex = 35;
@@ -171,7 +153,7 @@
             // labelChemin
             // 
             this.labelChemin.AutoSize = true;
-            this.labelChemin.Location = new System.Drawing.Point(161, 297);
+            this.labelChemin.Location = new System.Drawing.Point(161, 268);
             this.labelChemin.Name = "labelChemin";
             this.labelChemin.Size = new System.Drawing.Size(42, 13);
             this.labelChemin.TabIndex = 36;
@@ -179,7 +161,7 @@
             // 
             // buttonChemin
             // 
-            this.buttonChemin.Location = new System.Drawing.Point(429, 297);
+            this.buttonChemin.Location = new System.Drawing.Point(429, 268);
             this.buttonChemin.Name = "buttonChemin";
             this.buttonChemin.Size = new System.Drawing.Size(75, 23);
             this.buttonChemin.TabIndex = 37;
@@ -203,7 +185,7 @@
             // 
             // textBoxChemin
             // 
-            this.textBoxChemin.Location = new System.Drawing.Point(264, 297);
+            this.textBoxChemin.Location = new System.Drawing.Point(264, 268);
             this.textBoxChemin.Name = "textBoxChemin";
             this.textBoxChemin.Size = new System.Drawing.Size(144, 20);
             this.textBoxChemin.TabIndex = 41;
@@ -224,11 +206,9 @@
             this.Controls.Add(this.buttonAnnuler);
             this.Controls.Add(this.buttonValider);
             this.Controls.Add(this.textBoxNote);
-            this.Controls.Add(this.textBoxFormat);
             this.Controls.Add(this.textBoxTitre);
             this.Controls.Add(this.labelGenre);
             this.Controls.Add(this.labelNote);
-            this.Controls.Add(this.labeFormat);
             this.Controls.Add(this.labelAlbum);
             this.Controls.Add(this.labelArtiste);
             this.Controls.Add(this.labelTitre);
@@ -244,11 +224,9 @@
         private System.Windows.Forms.Button buttonAnnuler;
         private System.Windows.Forms.Button buttonValider;
         private System.Windows.Forms.TextBox textBoxNote;
-        private System.Windows.Forms.TextBox textBoxFormat;
         private System.Windows.Forms.TextBox textBoxTitre;
         private System.Windows.Forms.Label labelGenre;
         private System.Windows.Forms.Label labelNote;
-        private System.Windows.Forms.Label labeFormat;
         private System.Windows.Forms.Label labelAlbum;
         private System.Windows.Forms.Label labelArtiste;
         private System.Windows.Forms.Label labelTitre;

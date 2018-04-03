@@ -63,7 +63,7 @@ namespace LecteurMusique.Windows
                 this.textBoxDuree.Text = musique.Duree.ToString();
             }
            
-            this.textBoxFormat.Text = musique.Format;
+            //this.textBoxFormat.Text = musique.Format;
 
             if (musique.Note != null)
             {
@@ -132,15 +132,15 @@ namespace LecteurMusique.Windows
             }
 
             //champ format
-            if (this.textBoxFormat.Text == "")
-            {
-                this.textBoxFormat.BackColor = Color.Red;
-                verifOk = false;
-            }
-            else
-            {
-                this.textBoxFormat.BackColor = Color.White;
-            }
+            //if (this.textBoxFormat.Text == "")
+            //{
+            //    this.textBoxFormat.BackColor = Color.Red;
+            //    verifOk = false;
+            //}
+            //else
+            //{
+            //    this.textBoxFormat.BackColor = Color.White;
+            //}
 
             //champ note
             if (this.textBoxNote.Text == "")
@@ -203,7 +203,7 @@ namespace LecteurMusique.Windows
                 this.musique.ArtisteNom = this.textBoxArtiste.Text;
                 this.musique.AlbumLibelle = this.textBoxAlbum.Text;
                 this.musique.Duree = Int32.Parse(this.textBoxDuree.Text);
-                this.musique.Format = this.textBoxFormat.Text;
+                //this.musique.Format = this.textBoxFormat.Text;
                 this.musique.Note = Int32.Parse(this.textBoxNote.Text);
                 this.musique.Genre = ((Genre)this.comboBoxGenre.SelectedItem).Identifiant;
                 this.musique.CheminFichier = this.textBoxChemin.Text;

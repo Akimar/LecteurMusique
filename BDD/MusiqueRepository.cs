@@ -31,7 +31,7 @@ namespace LecteurMusique.BDD
                 toAdd.Identifiant = dataReader.GetInt64(0);
                 toAdd.Titre = dataReader.GetString(1);
                 toAdd.Duree = dataReader.GetInt32(2);
-                toAdd.Format = dataReader.GetString(3);
+                //toAdd.Format = dataReader.GetString(3);
                 toAdd.Genre = dataReader.GetInt64(4);
                 toAdd.Album = dataReader.GetInt64(5);
                 toAdd.CheminFichier = dataReader.GetString(6);
@@ -68,7 +68,7 @@ namespace LecteurMusique.BDD
             //on mape les paramètres
             commande.Parameters.AddWithValue("@Titre", musique.Titre);
             commande.Parameters.AddWithValue("@Duree", musique.Duree);
-            commande.Parameters.AddWithValue("@Format", musique.Format);
+           //commande.Parameters.AddWithValue("@Format", musique.Format);
             commande.Parameters.AddWithValue("@Genre", musique.Genre);
             commande.Parameters.AddWithValue("@Album", musique.Album);
             commande.Parameters.AddWithValue("@CheminFichier", musique.CheminFichier);
@@ -141,7 +141,7 @@ namespace LecteurMusique.BDD
             //on mape les paramètres
             commande.Parameters.AddWithValue("@Titre", musique.Titre);
             commande.Parameters.AddWithValue("@Duree", musique.Duree);
-            commande.Parameters.AddWithValue("@Format", musique.Format);
+            //commande.Parameters.AddWithValue("@Format", musique.Format);
             commande.Parameters.AddWithValue("@Genre", musique.Genre);
             commande.Parameters.AddWithValue("@Album", musique.Album);
             commande.Parameters.AddWithValue("@CheminFichier", musique.CheminFichier);
