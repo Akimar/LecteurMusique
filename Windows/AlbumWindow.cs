@@ -19,7 +19,7 @@ namespace LecteurMusique.Windows
         public Album album;
 
         //si true on ajoute sinon on modifie
-        public bool ajout = false;
+        //public bool ajout = false;
 
         // si true c'est que l'utilisateur a appuyé su le bouton valider et pas annuler
         public bool validate = false;
@@ -46,7 +46,19 @@ namespace LecteurMusique.Windows
             }
 
             this.textBoxNom.Text = album.Nom;
-            this.textBoxArtiste.Text = album.ArtisteNom;
+            //this.textBoxArtiste.Text = album.ArtisteNom;
+            this.comboBoxArtiste.DisplayMember = "Nom";
+
+            this.comboBoxArtiste.DataSource = ArtisteRepository.getArtistes();
+
+            foreach (Artiste item in this.comboBoxArtiste.Items)
+            {
+                if (item.Identifiant == album.Artiste)
+                {
+                    this.comboBoxArtiste.SelectedItem = item;
+                    break;
+                }
+            }
 
             if (album.NbMusiques != null)
             {
@@ -97,16 +109,28 @@ namespace LecteurMusique.Windows
                 this.textBoxNom.BackColor = Color.White;
             }
 
-            //champ artiste
-            if (this.textBoxArtiste.Text == "")
+
+            //combobox artiste
+            if (this.comboBoxArtiste.SelectedItem == null)
             {
-                this.textBoxArtiste.BackColor = Color.Red;
+                this.comboBoxArtiste.BackColor = Color.Red;
                 verifOk = false;
             }
             else
             {
-                this.textBoxArtiste.BackColor = Color.White;
+                this.comboBoxArtiste.BackColor = Color.White;
             }
+
+            //champ artiste
+            //if (this.textBoxArtiste.Text == "")
+            //{
+            //    this.textBoxArtiste.BackColor = Color.Red;
+            //    verifOk = false;
+            //}
+            //else
+            //{
+            //    this.textBoxArtiste.BackColor = Color.White;
+            //}
 
             //champ nbmusiques
             if (this.textBoxNbMusiques.Text == "")
@@ -143,11 +167,11 @@ namespace LecteurMusique.Windows
 
 
             //verifie si l artiste existe
-            if (ArtisteRepository.artisteExist(this.textBoxArtiste.Text) == false && textBoxArtiste.Text != "")
-            {
-                verifOk = false;
-                MessageBox.Show("\nL'artiste \"" + this.textBoxArtiste.Text + "\" n'existe pas. Il faut l'ajouter au préalable. Vous devez accéder aux aristes et l'ajouter.");
-            }
+            //if (ArtisteRepository.artisteExist(this.textBoxArtiste.Text) == false && textBoxArtiste.Text != "")
+            //{
+            //    verifOk = false;
+            //    MessageBox.Show("\nL'artiste \"" + this.textBoxArtiste.Text + "\" n'existe pas. Il faut l'ajouter au préalable. Vous devez accéder aux aristes et l'ajouter.");
+            //}
 
            
             if (verifOk)
@@ -155,11 +179,12 @@ namespace LecteurMusique.Windows
 
                 // si tout est ok on va mettre les infos dans notre objet musique
                 this.album.Nom = this.textBoxNom.Text;
-                this.album.ArtisteNom = this.textBoxArtiste.Text;
+                //this.album.ArtisteNom = this.textBoxArtiste.Text;
+                this.album.Artiste = ((Artiste)this.comboBoxArtiste.SelectedItem).Identifiant;
                 this.album.NbMusiques = Int32.Parse(this.textBoxNbMusiques.Text);
                 this.album.Annee = Int32.Parse(this.textBoxAnnee.Text);
                 this.album.Jaquette = this.textBoxJaquette.Text;
-                this.album.Artiste = ArtisteRepository.getIdFromNom(this.textBoxArtiste.Text);
+                //this.album.Artiste = ArtisteRepository.getIdFromNom(this.textBoxArtiste.Text);
 
 
 

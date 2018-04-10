@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArtisteWindow));
             this.buttonValider = new System.Windows.Forms.Button();
             this.buttonAnnuler = new System.Windows.Forms.Button();
             this.labelNom = new System.Windows.Forms.Label();
@@ -103,6 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(482, 318);
             this.Controls.Add(this.buttonImage);
             this.Controls.Add(this.textBoxNom);
@@ -111,8 +113,12 @@
             this.Controls.Add(this.labelNom);
             this.Controls.Add(this.buttonAnnuler);
             this.Controls.Add(this.buttonValider);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ArtisteWindow";
-            this.Text = "ArtisteWindow";
+            this.Text = "Artiste";
             this.ResumeLayout(false);
             this.PerformLayout();
 

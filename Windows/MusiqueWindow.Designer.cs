@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MusiqueWindow));
             this.buttonAnnuler = new System.Windows.Forms.Button();
             this.buttonValider = new System.Windows.Forms.Button();
             this.textBoxNote = new System.Windows.Forms.TextBox();
@@ -196,6 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(675, 438);
             this.Controls.Add(this.comboBoxAlbum);
             this.Controls.Add(this.comboBoxArtiste);
@@ -214,6 +216,10 @@
             this.Controls.Add(this.labelAlbum);
             this.Controls.Add(this.labelArtiste);
             this.Controls.Add(this.labelTitre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MusiqueWindow";
             this.Text = "Musique";
             this.ResumeLayout(false);

@@ -30,8 +30,7 @@ namespace LecteurMusique.BDD
 
                 toAdd.Identifiant = dataReader.GetInt64(0);
                 toAdd.Titre = dataReader.GetString(1);
-                toAdd.Duree = dataReader.GetInt32(2);
-                //toAdd.Format = dataReader.GetString(3);
+                toAdd.Duree = dataReader.GetString(2);
                 toAdd.Genre = dataReader.GetInt64(3);
                 toAdd.Album = dataReader.GetInt64(4);
                 toAdd.CheminFichier = dataReader.GetString(5);

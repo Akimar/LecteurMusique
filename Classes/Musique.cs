@@ -11,6 +11,7 @@ namespace LecteurMusique.Classes
     {
         #region Propriétés
 
+    
         public long Identifiant;
 
         private string titre;
@@ -52,21 +53,22 @@ namespace LecteurMusique.Classes
         }
 
 
-        private int? duree;
+        private string duree;
 
-        public int? Duree
+        public string Duree
         {
             get { return duree; }
             set { duree = value; }
         }
 
-        //private string format;
+        //private int? duree;
 
-        //public string Format
+        //public int? Duree
         //{
-        //    get { return format; }
-        //    set { format = value; }
+        //    get { return duree; }
+        //    set { duree = value; }
         //}
+
 
         private int? note;
 

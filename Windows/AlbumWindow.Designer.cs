@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlbumWindow));
             this.labelNom = new System.Windows.Forms.Label();
             this.textBoxNom = new System.Windows.Forms.TextBox();
             this.labelArtiste = new System.Windows.Forms.Label();
             this.labelNbMusiques = new System.Windows.Forms.Label();
             this.labelAnnee = new System.Windows.Forms.Label();
-            this.textBoxArtiste = new System.Windows.Forms.TextBox();
             this.textBoxNbMusiques = new System.Windows.Forms.TextBox();
             this.textBoxAnnee = new System.Windows.Forms.TextBox();
             this.buttonValider = new System.Windows.Forms.Button();
@@ -41,6 +41,7 @@
             this.textBoxJaquette = new System.Windows.Forms.TextBox();
             this.labelJaquette = new System.Windows.Forms.Label();
             this.buttonJaquette = new System.Windows.Forms.Button();
+            this.comboBoxArtiste = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // labelNom
@@ -85,13 +86,6 @@
             this.labelAnnee.Size = new System.Drawing.Size(38, 13);
             this.labelAnnee.TabIndex = 4;
             this.labelAnnee.Text = "Année";
-            // 
-            // textBoxArtiste
-            // 
-            this.textBoxArtiste.Location = new System.Drawing.Point(208, 74);
-            this.textBoxArtiste.Name = "textBoxArtiste";
-            this.textBoxArtiste.Size = new System.Drawing.Size(154, 20);
-            this.textBoxArtiste.TabIndex = 5;
             // 
             // textBoxNbMusiques
             // 
@@ -153,11 +147,21 @@
             this.buttonJaquette.UseVisualStyleBackColor = true;
             this.buttonJaquette.Click += new System.EventHandler(this.buttonJaquette_Click);
             // 
+            // comboBoxArtiste
+            // 
+            this.comboBoxArtiste.FormattingEnabled = true;
+            this.comboBoxArtiste.Location = new System.Drawing.Point(208, 74);
+            this.comboBoxArtiste.Name = "comboBoxArtiste";
+            this.comboBoxArtiste.Size = new System.Drawing.Size(154, 21);
+            this.comboBoxArtiste.TabIndex = 13;
+            // 
             // AlbumWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(568, 318);
+            this.Controls.Add(this.comboBoxArtiste);
             this.Controls.Add(this.buttonJaquette);
             this.Controls.Add(this.labelJaquette);
             this.Controls.Add(this.textBoxJaquette);
@@ -165,12 +169,15 @@
             this.Controls.Add(this.buttonValider);
             this.Controls.Add(this.textBoxAnnee);
             this.Controls.Add(this.textBoxNbMusiques);
-            this.Controls.Add(this.textBoxArtiste);
             this.Controls.Add(this.labelAnnee);
             this.Controls.Add(this.labelNbMusiques);
             this.Controls.Add(this.labelArtiste);
             this.Controls.Add(this.textBoxNom);
             this.Controls.Add(this.labelNom);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AlbumWindow";
             this.Text = "Album";
             this.ResumeLayout(false);
@@ -185,7 +192,6 @@
         private System.Windows.Forms.Label labelArtiste;
         private System.Windows.Forms.Label labelNbMusiques;
         private System.Windows.Forms.Label labelAnnee;
-        private System.Windows.Forms.TextBox textBoxArtiste;
         private System.Windows.Forms.TextBox textBoxNbMusiques;
         private System.Windows.Forms.TextBox textBoxAnnee;
         private System.Windows.Forms.Button buttonValider;
@@ -193,5 +199,6 @@
         private System.Windows.Forms.TextBox textBoxJaquette;
         private System.Windows.Forms.Label labelJaquette;
         private System.Windows.Forms.Button buttonJaquette;
+        private System.Windows.Forms.ComboBox comboBoxArtiste;
     }
 }

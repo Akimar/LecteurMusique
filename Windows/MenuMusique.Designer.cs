@@ -121,6 +121,10 @@
             this.Controls.Add(this.buttonAjout);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonClose);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MenuMusique";
             this.Text = "Menu Musiques";
             this.Load += new System.EventHandler(this.MenuMusique_Load);

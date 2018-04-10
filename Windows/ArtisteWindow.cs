@@ -16,7 +16,7 @@ namespace LecteurMusique.Windows
         public Artiste artiste;
 
         //si true on ajoute sinon on modifie
-        public bool ajout = false;
+        //public bool ajout = false;
 
         // si true c'est que l'utilisateur a appuyé su le bouton valider et pas annuler
         public bool validate = false;

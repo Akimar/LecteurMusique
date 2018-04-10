@@ -19,7 +19,7 @@ namespace LecteurMusique.Windows
         public Musique musique;
 
         //si true on ajoute sinon on modifie
-        public bool ajout = false;
+        //public bool ajout = false;
 
         // si true c'est que l'utilisateur a appuyé su le bouton valider et pas annuler
         public bool validate = false;
@@ -33,6 +33,10 @@ namespace LecteurMusique.Windows
         {
             InitializeComponent();
 
+            //datetimepicker
+            //dateTimePickerDuree = new DateTimePicker();
+            //dateTimePickerDuree.CustomFormat = "mm:ss";
+                       
 
             // va chercher la propriete get Libelle
             this.comboBoxGenre.DisplayMember = "Libelle";
@@ -61,11 +65,13 @@ namespace LecteurMusique.Windows
             //this.comboBoxArtiste.Text = musique.ArtisteNom;
             //this.textBoxAlbum.Text = musique.AlbumLibelle;
             this.textBoxChemin.Text = musique.CheminFichier;
-            if (musique.Duree != null)
-            {
-                this.textBoxDuree.Text = musique.Duree.ToString();
-            }
-           
+            this.textBoxDuree.Text = musique.Duree;
+
+            //if (musique.Duree != null)
+            //{
+            //    this.textBoxDuree.Text = musique.Duree.ToString();
+            //}
+
             //this.textBoxFormat.Text = musique.Format;
 
             if (musique.Note != null)
@@ -253,7 +259,8 @@ namespace LecteurMusique.Windows
                 this.musique.Artiste = ((Artiste)this.comboBoxArtiste.SelectedItem).Identifiant;
                 //this.musique.AlbumLibelle = this.textBoxAlbum.Text;
                 this.musique.Album = ((Album)this.comboBoxAlbum.SelectedItem).Identifiant;
-                this.musique.Duree = Int32.Parse(this.textBoxDuree.Text);
+                //this.musique.Duree = Int32.Parse(this.textBoxDuree.Text);
+                this.musique.Duree = this.textBoxDuree.Text;
                 //this.musique.Format = this.textBoxFormat.Text;
                 this.musique.Note = Int32.Parse(this.textBoxNote.Text);
                 this.musique.Genre = ((Genre)this.comboBoxGenre.SelectedItem).Identifiant;
@@ -288,7 +295,5 @@ namespace LecteurMusique.Windows
             }
 
         }
-
-      
     }
 }
