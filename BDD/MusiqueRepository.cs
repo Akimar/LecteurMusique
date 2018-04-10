@@ -11,6 +11,7 @@ namespace LecteurMusique.BDD
     public static class MusiqueRepository
     {
 
+        //get les musiques en base
         public static List<Musique> getMusiques()
         {
             List<Musique> toReturn = new List<Musique>();
@@ -44,6 +45,7 @@ namespace LecteurMusique.BDD
         }
 
 
+        //ajoute une musique en base
         public static long addMusique(Musique musique)
         {
             SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
@@ -66,7 +68,6 @@ namespace LecteurMusique.BDD
             //on mape les paramètres
             commande.Parameters.AddWithValue("@Titre", musique.Titre);
             commande.Parameters.AddWithValue("@Duree", musique.Duree);
-           //commande.Parameters.AddWithValue("@Format", musique.Format);
             commande.Parameters.AddWithValue("@Genre", musique.Genre);
             commande.Parameters.AddWithValue("@Album", musique.Album);
             commande.Parameters.AddWithValue("@CheminFichier", musique.CheminFichier);
@@ -87,6 +88,7 @@ namespace LecteurMusique.BDD
             }
         }
 
+        //ajoute une ligne dans la tables compose
         public static bool addCompose(long idArtiste, long idMusique)
         {
            
@@ -114,6 +116,7 @@ namespace LecteurMusique.BDD
             }
         }
 
+        //met à jour une musique
         public static bool updateMusique(Musique musique)
         {
             //long idArtiste = 0;
@@ -140,7 +143,6 @@ namespace LecteurMusique.BDD
             //on mape les paramètres
             commande.Parameters.AddWithValue("@Titre", musique.Titre);
             commande.Parameters.AddWithValue("@Duree", musique.Duree);
-            //commande.Parameters.AddWithValue("@Format", musique.Format);
             commande.Parameters.AddWithValue("@Genre", musique.Genre);
             commande.Parameters.AddWithValue("@Album", musique.Album);
             commande.Parameters.AddWithValue("@CheminFichier", musique.CheminFichier);
@@ -175,7 +177,7 @@ namespace LecteurMusique.BDD
             }
         }
 
-
+        //suppression d'une musique
         public static bool deleteMusique(Musique musique)
         {
             SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
@@ -218,6 +220,7 @@ namespace LecteurMusique.BDD
 
         }
 
+        //get l'id d'un artiste à partir de l'id d'une musique
         public static long getArtisteFromMusiqueId(long idMusique)
         {
             SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");

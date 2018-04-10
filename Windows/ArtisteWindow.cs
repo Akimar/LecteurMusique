@@ -15,8 +15,6 @@ namespace LecteurMusique.Windows
     {
         public Artiste artiste;
 
-        //si true on ajoute sinon on modifie
-        //public bool ajout = false;
 
         // si true c'est que l'utilisateur a appuyé su le bouton valider et pas annuler
         public bool validate = false;
@@ -38,13 +36,15 @@ namespace LecteurMusique.Windows
                 artiste = new Artiste();
             }
 
+            //remplit les textbox de la fenêtre
             this.textBoxNom.Text = artiste.Nom;
             this.textBoxImage.Text = artiste.Image;
         }
 
         private void butttonImage_Click(object sender, EventArgs e)
         {
-             OpenFileDialog openDialog = new OpenFileDialog();
+            //ouvre une boite de dialogue pour récuperer l'image du groupe
+            OpenFileDialog openDialog = new OpenFileDialog();
             openDialog.Filter = "jpg files (*.jpg)|*.jpg|jpeg files (*jpeg)|*.jpeg|png files (*.png)|*.png";
             openDialog.Multiselect = false;
 
@@ -54,11 +54,12 @@ namespace LecteurMusique.Windows
             }
         }
 
+        //vérifie si tous les champs sont bien remplis
         private void buttonValider_Click(object sender, EventArgs e)
         {
             bool verifOk = true;
 
-
+            //champ nom
             if (this.textBoxNom.Text == "")
             {
                 this.textBoxNom.BackColor = Color.Red;
@@ -69,6 +70,7 @@ namespace LecteurMusique.Windows
                 this.textBoxNom.BackColor = Color.White;
             }
 
+            //champ image
             if (this.textBoxImage.Text == "")
             {
                 this.textBoxImage.BackColor = Color.Red;
@@ -83,7 +85,7 @@ namespace LecteurMusique.Windows
             if (verifOk)
             {
 
-                // si tout est ok on va mettre les infos dans notre objet musique
+                // si tout est ok on va mettre les infos dans notre objet artiste
                 this.artiste.Nom = this.textBoxNom.Text;
                 this.artiste.Image = this.textBoxImage.Text;
                

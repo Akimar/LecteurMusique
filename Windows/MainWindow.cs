@@ -24,6 +24,7 @@ namespace LecteurMusique
 
         private void updateDataGrid()
         {
+            //get de tous les artistes en base
             this.dataGridView1.DataSource = ArtisteRepository.getArtistes();
             this.dataGridView1.Refresh();
 
@@ -31,16 +32,21 @@ namespace LecteurMusique
         }
         private void loadImages()
         {
+            //vérifie qu'une seule ligne a été sélectionnée
             if (this.dataGridView1.SelectedRows.Count == 1)
             {
                 Artiste artisteImageToLoad = null;
 
+                //pour le chaque ligne du data gridview selectionnée, on vérifie que l'objet contenu soit de type artiste
+                //(il n'y a ici qu'une seule ligne)
                 foreach (DataGridViewRow item in this.dataGridView1.SelectedRows.OfType<DataGridViewRow>())
                 {
                     if (item.DataBoundItem.GetType() == typeof(Artiste))
                     {
+                        //on affecte l'item du datagridview en le castant en objet artiste
                         artisteImageToLoad = item.DataBoundItem as Artiste;
 
+                        //on charge l'image à afficher
                         pictureBox1.Image = Bitmap.FromFile(artisteImageToLoad.Image);
                         pictureBox1.Update();
 
@@ -59,6 +65,7 @@ namespace LecteurMusique
 
         private void buttonMusique_Click(object sender, EventArgs e)
         {
+            //ouvre la fenêtre de gestion des musiques
             MenuMusique windowToOpen = new MenuMusique();
             windowToOpen.ShowDialog();
             updateDataGrid();
@@ -66,12 +73,14 @@ namespace LecteurMusique
 
         private void buttonAlbum_Click(object sender, EventArgs e)
         {
+            //ouvre la fenêtre de gestion des albums
             MenuAlbum windowToopen = new MenuAlbum();
             windowToopen.ShowDialog();
         }
 
         private void buttonAjouter_Click(object sender, EventArgs e)
         {
+            //ouvre la fenêtre d'ajout d'un artiste
             ArtisteWindow windowToOpen = new ArtisteWindow(null);
             windowToOpen.ShowDialog();
             if (windowToOpen.validate == true)
@@ -83,25 +92,31 @@ namespace LecteurMusique
 
         private void butttonModifier_Click(object sender, EventArgs e)
         {
+            //vérifie qu'une seule ligne a été sélectionnée
             if (this.dataGridView1.SelectedRows.Count == 1)
             {
                 Artiste artisteToUpdate = null;
 
+                //pour le chaque ligne du data gridview selectionnée, on vérifie que l'objet contenu soit de type artiste
+                //(il n'y a ici qu'une seule ligne)
                 foreach (DataGridViewRow item in this.dataGridView1.SelectedRows.OfType<DataGridViewRow>())
                 {
                     if (item.DataBoundItem.GetType() == typeof(Artiste))
                     {
+                        //on affecte l'item du datagridview en le castant en objet artiste
                         artisteToUpdate = item.DataBoundItem as Artiste;
 
                     }
 
                 }
 
+                //ouvre la fenêtre de modification de l'artiste
                 ArtisteWindow windowToOpen = new ArtisteWindow(artisteToUpdate);
                 windowToOpen.ShowDialog();
 
                 if (windowToOpen.validate == true)
                 {
+                    //met à jour l'artiste
                     ArtisteRepository.updateArtiste(windowToOpen.artiste);
                     updateDataGrid();
 
@@ -116,19 +131,25 @@ namespace LecteurMusique
         private void MainWindow_Load(object sender, EventArgs e)
         {
             updateDataGrid();
+            //séléctione la première ligne du dgv
             dataGridView1.Rows[0].Selected = true;
             loadImages();
         }
 
         private void buttonSupprimer_Click(object sender, EventArgs e)
         {
+            //vérifie qu'une seule ligne a été sélectionnée
             if (this.dataGridView1.SelectedRows.Count == 1)
             {
                 Artiste artisteToDelete = null;
+
+                //pour le chaque ligne du data gridview selectionnée, on vérifie que l'objet contenu soit de type artiste
+                //(il n'y a ici qu'une seule ligne)
                 foreach (DataGridViewRow item in this.dataGridView1.SelectedRows.OfType<DataGridViewRow>())
                 {
                     if (item.DataBoundItem.GetType() == typeof(Artiste))
                     {
+                        //on affecte l'item du datagridview en le castant en objet artiste
                         artisteToDelete = item.DataBoundItem as Artiste;
 
                     }
@@ -136,6 +157,7 @@ namespace LecteurMusique
 
                 if (MessageBox.Show("Êtes-vous sur de vouloir supprimer cet artiste ?", "Suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
+                    //suppression de l'artiste
                     ArtisteRepository.deleteArtiste(artisteToDelete);
                 }
                 updateDataGrid();

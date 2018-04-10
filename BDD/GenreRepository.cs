@@ -11,6 +11,7 @@ namespace LecteurMusique.BDD
     public static class GenreRepository
     {
 
+        //get le libelle du genre à partir de son id
         public static string getGenreLibelle(long identifiantGenre)
         {
             try
@@ -34,6 +35,7 @@ namespace LecteurMusique.BDD
             }
         }
 
+        //get tous les genres en base
         public static List<Genre> getGenres()
         {
             List<Genre> toReturn = new List<Genre>();

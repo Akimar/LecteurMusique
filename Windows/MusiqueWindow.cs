@@ -17,10 +17,7 @@ namespace LecteurMusique.Windows
         #region Proprietés
 
         public Musique musique;
-
-        //si true on ajoute sinon on modifie
-        //public bool ajout = false;
-
+        
         // si true c'est que l'utilisateur a appuyé su le bouton valider et pas annuler
         public bool validate = false;
 
@@ -32,15 +29,13 @@ namespace LecteurMusique.Windows
         public MusiqueWindow(Musique _musique)
         {
             InitializeComponent();
-
-            //datetimepicker
-            //dateTimePickerDuree = new DateTimePicker();
-            //dateTimePickerDuree.CustomFormat = "mm:ss";
                        
 
             // va chercher la propriete get Libelle
             this.comboBoxGenre.DisplayMember = "Libelle";
+            // va chercher la propriete get nom
             this.comboBoxAlbum.DisplayMember = "Nom";
+            // va chercher la propriete get nom
             this.comboBoxArtiste.DisplayMember = "Nom";
 
             if (_musique != null)
@@ -56,23 +51,19 @@ namespace LecteurMusique.Windows
             }
 
 
-
+            //récupère tous les genres
             this.comboBoxGenre.DataSource = GenreRepository.getGenres();
+            //récupère tous les artistes
             this.comboBoxArtiste.DataSource = ArtisteRepository.getArtistes();
+            //récupère tous les albums
             this.comboBoxAlbum.DataSource = AlbumRepository.getAlbums();
-
+   
+            //remplit les textbox et les combobox
             this.textBoxTitre.Text = musique.Titre;
-            //this.comboBoxArtiste.Text = musique.ArtisteNom;
-            //this.textBoxAlbum.Text = musique.AlbumLibelle;
             this.textBoxChemin.Text = musique.CheminFichier;
             this.textBoxDuree.Text = musique.Duree;
 
-            //if (musique.Duree != null)
-            //{
-            //    this.textBoxDuree.Text = musique.Duree.ToString();
-            //}
-
-            //this.textBoxFormat.Text = musique.Format;
+           
 
             if (musique.Note != null)
             {
@@ -109,6 +100,7 @@ namespace LecteurMusique.Windows
 
         }
 
+        //vérifie si tous les champs sont bien remplis
         private void buttonValider_CLick(object sender, EventArgs e)
         {
             bool verifOk = true;
@@ -126,27 +118,7 @@ namespace LecteurMusique.Windows
                 this.textBoxTitre.BackColor = Color.White;
             }
 
-            //champ artiste
-            //if (this.textBoxArtiste.Text == "")
-            //{
-            //    this.textBoxArtiste.BackColor = Color.Red;
-            //    verifOk = false;
-            //}
-            //else
-            //{
-            //    this.textBoxArtiste.BackColor = Color.White;
-            //}
-
-            ////champ album
-            //if (this.textBoxAlbum.Text == "")
-            //{
-            //    this.textBoxAlbum.BackColor = Color.Red;
-            //    verifOk = false;
-            //}
-            //else
-            //{
-            //    this.textBoxAlbum.BackColor = Color.White;
-            //}
+          
 
             //champ duree
             if (this.textBoxDuree.Text == "")
@@ -159,17 +131,7 @@ namespace LecteurMusique.Windows
                 this.textBoxDuree.BackColor = Color.White;
             }
 
-            //champ format
-            //if (this.textBoxFormat.Text == "")
-            //{
-            //    this.textBoxFormat.BackColor = Color.Red;
-            //    verifOk = false;
-            //}
-            //else
-            //{
-            //    this.textBoxFormat.BackColor = Color.White;
-            //}
-
+            
             //champ note
             if (this.textBoxNote.Text == "")
             {
@@ -232,12 +194,7 @@ namespace LecteurMusique.Windows
                 this.textBoxChemin.BackColor = Color.White;
             }
 
-            //verifie si l artiste existe
-            //if(ArtisteRepository.artisteExist(this.textBoxArtiste.Text) == false && textBoxArtiste.Text != "")
-            //{
-            //    verifOk = false;
-            //    messageErreur += "\nL'artiste \""+ this.textBoxArtiste.Text+ "\" n'existe pas. Il faut l'ajouter au préalable. Vous devez accéder aux aristes et l'ajouter.";
-            //}
+          
 
             //verifie si l album existe dans le groupe
             if (AlbumRepository.albumArtisteExist(this.comboBoxAlbum.Text, ((Artiste)this.comboBoxArtiste.SelectedItem).Identifiant) == false)
@@ -257,20 +214,13 @@ namespace LecteurMusique.Windows
                 // si tout est ok on va mettre les infos dans notre objet musique
                 this.musique.Titre = this.textBoxTitre.Text;
                 this.musique.Artiste = ((Artiste)this.comboBoxArtiste.SelectedItem).Identifiant;
-                //this.musique.AlbumLibelle = this.textBoxAlbum.Text;
                 this.musique.Album = ((Album)this.comboBoxAlbum.SelectedItem).Identifiant;
-                //this.musique.Duree = Int32.Parse(this.textBoxDuree.Text);
                 this.musique.Duree = this.textBoxDuree.Text;
-                //this.musique.Format = this.textBoxFormat.Text;
                 this.musique.Note = Int32.Parse(this.textBoxNote.Text);
                 this.musique.Genre = ((Genre)this.comboBoxGenre.SelectedItem).Identifiant;
                 this.musique.CheminFichier = this.textBoxChemin.Text;
-                //this.musique.Album = AlbumRepository.getIdFromNom(this.comboBoxAlbum.Text);
-                //this.musique.Artiste = ArtisteRepository.getIdFromNom(this.comboBoxArtiste.Text);
-
-                //this.comboBoxGenre.DataSource = GenreRepository.getGenres();
-                //this.comboBoxArtiste.DataSource = ArtisteRepository.getArtistes();
-                //this.comboBoxAlbum.DataSource = AlbumRepository.getAlbumsFromArtisteId(this.musique.Artiste = ((Artiste)this.comboBoxArtiste.SelectedItem).Identifiant);
+                
+              
 
 
                 this.validate = true;
@@ -285,6 +235,7 @@ namespace LecteurMusique.Windows
 
         private void buttonChemin_Click(object sender, EventArgs e)
         {
+            //ouvre une boite de dialogue pour récuperer la musique
             OpenFileDialog openDialog = new OpenFileDialog();
             openDialog.Filter =  "mp3 files (*.mp3)|*.mp3";
             openDialog.Multiselect = false;

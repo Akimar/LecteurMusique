@@ -10,6 +10,7 @@ namespace LecteurMusique.BDD
 {
     public static class ArtisteRepository
     {
+        //get l'artiste dont l'id de la musique est passé en paramètre
         public static string getArtisteNomFromMusique(long identifiantMusique)
         {
             try
@@ -33,35 +34,36 @@ namespace LecteurMusique.BDD
             }
         }
 
-        public static bool artisteExist(string nomArtiste)
-        {
-            try
-            {
-                SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
+        //public static bool artisteExist(string nomArtiste)
+        //{
+        //    try
+        //    {
+        //        SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
 
-                SqlCommand commande = new SqlCommand();
-                commande.CommandText = @"SELECT * FROM Artiste WHERE Nom = @nomArtiste";
-                commande.Connection = connection;
+        //        SqlCommand commande = new SqlCommand();
+        //        commande.CommandText = @"SELECT * FROM Artiste WHERE Nom = @nomArtiste";
+        //        commande.Connection = connection;
 
-                connection.Open();
+        //        connection.Open();
 
-                commande.Prepare();
-                commande.Parameters.AddWithValue("@nomArtiste", nomArtiste);
+        //        commande.Prepare();
+        //        commande.Parameters.AddWithValue("@nomArtiste", nomArtiste);
 
-                SqlDataReader reader = commande.ExecuteReader();
+        //        SqlDataReader reader = commande.ExecuteReader();
 
-                while (reader.Read())
-                {
-                    return true;
-                }
-            }
-            catch (Exception)
-            {
+        //        while (reader.Read())
+        //        {
+        //            return true;
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
 
-            }
-            return false;
-        }
+        //    }
+        //    return false;
+        //}
 
+            //get tous les artistes en base
         public static List<Artiste> getArtistes()
         {
             List<Artiste> toReturn = new List<Artiste>();
@@ -97,29 +99,30 @@ namespace LecteurMusique.BDD
             return toReturn;
         }
 
-        public static long getIdFromNom(string nomArtiste)
-        {
-            try
-            {
-                SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
+        //public static long getIdFromNom(string nomArtiste)
+        //{
+        //    try
+        //    {
+        //        SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
 
-                SqlCommand commande = new SqlCommand();
-                commande.CommandText = @"SELECT Identifiant FROM Artiste WHERE Nom = @nomArtiste";
-                commande.Connection = connection;
+        //        SqlCommand commande = new SqlCommand();
+        //        commande.CommandText = @"SELECT Identifiant FROM Artiste WHERE Nom = @nomArtiste";
+        //        commande.Connection = connection;
 
-                connection.Open();
+        //        connection.Open();
 
-                commande.Prepare();
-                commande.Parameters.AddWithValue("@nomArtiste", nomArtiste);
+        //        commande.Prepare();
+        //        commande.Parameters.AddWithValue("@nomArtiste", nomArtiste);
 
-                return long.Parse(commande.ExecuteScalar().ToString());
-            }
-            catch (Exception)
-            {
-                return -1;
-            }
-        }
+        //        return long.Parse(commande.ExecuteScalar().ToString());
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return -1;
+        //    }
+        //}
 
+            //get du nom d'un artiste à partir de son identifiant
         public static string getArtisteNom(long identifiantArtiste)
         {
             try
@@ -143,6 +146,7 @@ namespace LecteurMusique.BDD
             }
         }
 
+        //ajoute l'artiste en base
         public static bool addArtiste(Artiste artiste)
         {
             SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
@@ -177,6 +181,7 @@ namespace LecteurMusique.BDD
             }
         }
 
+        //met à jour l'artiste en base
         public static bool updateArtiste(Artiste artiste)
         {
 
@@ -211,6 +216,7 @@ namespace LecteurMusique.BDD
             }
         }
 
+        //supprime l'artiste en base
         public static bool deleteArtiste(Artiste artiste)
         {
          

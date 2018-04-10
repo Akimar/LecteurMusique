@@ -11,10 +11,10 @@ namespace LecteurMusique.BDD
     public static class AlbumRepository
     {
 
+        //get du libelle de l'album à partir de son id
         public static string getAlbumLibelle(long identifiantAlbum)
         {
-            try
-            {
+            
                 SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
 
                 SqlCommand commande = new SqlCommand();
@@ -25,6 +25,8 @@ namespace LecteurMusique.BDD
 
                 commande.Prepare();
                 commande.Parameters.AddWithValue("@identifiantAlbum", identifiantAlbum);
+            try
+            {
 
                 return commande.ExecuteScalar().ToString();
             }
@@ -34,30 +36,31 @@ namespace LecteurMusique.BDD
             }
         }
 
-        public static long getIdFromNom(string nomAlbum)
-        {
-            try
-            {
-                SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
+        //public static long getIdFromNom(string nomAlbum)
+        //{
+        //    try
+        //    {
+        //        SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
 
-                SqlCommand commande = new SqlCommand();
-                commande.CommandText = @"SELECT Identifiant FROM Album WHERE Nom = @nomAlbum";
-                commande.Connection = connection;
+        //        SqlCommand commande = new SqlCommand();
+        //        commande.CommandText = @"SELECT Identifiant FROM Album WHERE Nom = @nomAlbum";
+        //        commande.Connection = connection;
 
-                connection.Open();
+        //        connection.Open();
 
-                commande.Prepare();
-                commande.Parameters.AddWithValue("@nomAlbum", nomAlbum);
+        //        commande.Prepare();
+        //        commande.Parameters.AddWithValue("@nomAlbum", nomAlbum);
 
-                return long.Parse(commande.ExecuteScalar().ToString());
-            }
-            catch (Exception)
-            {
-                return -1;
-            }
-        }
+        //        return long.Parse(commande.ExecuteScalar().ToString());
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return -1;
+        //    }
+        //}
 
 
+            //get tous es albums en base
         public static List<Album> getAlbums()
         {
             List<Album> toReturn = new List<Album>();
@@ -88,6 +91,7 @@ namespace LecteurMusique.BDD
             return toReturn;
         }
 
+        //vérifie si l'album passé en paramètre est bien du groupe dont l'id est passé en paramètre
         public static bool albumArtisteExist(string nomAlbum, long idArtiste)
         {
             try
@@ -118,6 +122,7 @@ namespace LecteurMusique.BDD
             return false;
         }
 
+        //ajoute la'lbum en base
         public static bool addAlbum(Album album)
         {
             SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
@@ -157,6 +162,7 @@ namespace LecteurMusique.BDD
             }
         }
 
+        //met à jour l'album en base
         public static bool updateAlbum(Album album)
         {
 
@@ -197,6 +203,7 @@ namespace LecteurMusique.BDD
             }
         }
 
+        //supprime la'lbum en base
         public static bool deleteAlbum(Album album)
         {
             SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
@@ -227,40 +234,40 @@ namespace LecteurMusique.BDD
 
         }
 
-        public static List<Album> getAlbumsFromArtisteId(long artisteId)
-        {
-            List<Album> toReturn = new List<Album>();
-            SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
+        //public static List<Album> getAlbumsFromArtisteId(long artisteId)
+        //{
+        //    List<Album> toReturn = new List<Album>();
+        //    SqlConnection connection = new SqlConnection("Server=localhost;Database=BaseDeDonneesLecteur;Trusted_Connection=True;");
 
-            SqlCommand commande = new SqlCommand();
-            commande.CommandText = @"SELECT * FROM Album WHERE Artiste = @idArtiste";
-            commande.Connection = connection;
+        //    SqlCommand commande = new SqlCommand();
+        //    commande.CommandText = @"SELECT * FROM Album WHERE Artiste = @idArtiste";
+        //    commande.Connection = connection;
             
-            commande.Prepare();
+        //    commande.Prepare();
 
      
-            commande.Parameters.AddWithValue("@idArtiste", artisteId);
+        //    commande.Parameters.AddWithValue("@idArtiste", artisteId);
 
 
-            connection.Open();
+        //    connection.Open();
 
-            SqlDataReader dataReader = commande.ExecuteReader();
+        //    SqlDataReader dataReader = commande.ExecuteReader();
 
-            while (dataReader.Read())
-            {
-                Album toAdd = new Album();
+        //    while (dataReader.Read())
+        //    {
+        //        Album toAdd = new Album();
 
-                toAdd.Identifiant = dataReader.GetInt64(0);
-                toAdd.Nom = dataReader.GetString(1);
-                toAdd.NbMusiques = dataReader.GetInt32(2);
-                toAdd.Annee = dataReader.GetInt32(3);
-                toAdd.Artiste = dataReader.GetInt64(4);
-                toAdd.Jaquette = dataReader.GetString(5);
+        //        toAdd.Identifiant = dataReader.GetInt64(0);
+        //        toAdd.Nom = dataReader.GetString(1);
+        //        toAdd.NbMusiques = dataReader.GetInt32(2);
+        //        toAdd.Annee = dataReader.GetInt32(3);
+        //        toAdd.Artiste = dataReader.GetInt64(4);
+        //        toAdd.Jaquette = dataReader.GetString(5);
 
 
-                toReturn.Add(toAdd);
-            }
-            return toReturn;
-        }
+        //        toReturn.Add(toAdd);
+        //    }
+        //    return toReturn;
+        //}
     }
 }
